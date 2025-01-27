@@ -12,7 +12,7 @@ const LinkBox: React.FC<Props> = ({ href, url, children, classNames }) => {
   const active = url === href;
   return (
     <li
-      className={`p-2 ${active ? "bg-teal-500 dark:bg-[#b2ff66] text-white dark:text-gray-800" : "text-gray-800 dark:text-gray-300"} ${classNames}`}
+      className={`p-2 text-lg font-thin hover:underline hover:decoration-1 hover:underline-offset-4 ${active ? "text-orange-500 dark:text-favColor font-normal" : "text-gray-800 dark:text-gray-300 font-thin"} ${classNames}`}
     >
       <Link href={href}>{children}</Link>
     </li>

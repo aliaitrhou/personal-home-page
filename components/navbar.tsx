@@ -1,7 +1,8 @@
 import React from "react";
 import Logo from "./logo";
 import LinkBox from "./linkbox";
-import { CiMenuFries } from "react-icons/ci";
+import ToggleTheme from "./toggle-theme";
+import MobileMenu from "./mobileMenu";
 
 interface NavProps {
   url: string;
@@ -9,6 +10,9 @@ interface NavProps {
 }
 
 const Navbar: React.FC<NavProps> = ({ url, classNames }) => {
+  const mobileMenuItemsStyles =
+    "w-full hover:bg-gray-300 dark:hover:bg-zinc-600 py-1  text-center";
+
   return (
     // TODO: change the bg leter:
     <nav
@@ -31,16 +35,34 @@ const Navbar: React.FC<NavProps> = ({ url, classNames }) => {
             contact
           </LinkBox>
         </ul>
-        <div className="flex-1 text-right">
+        <div className="flex-1 text-end self-center">
+          <ToggleTheme />
           <div className="ml-2 inline-block md:hidden">
-            <div className="relative">
-              <button
-                className="p-2 border rounded-md focus:outline-none focus:ring"
-                aria-label="Options"
-              >
-                <CiMenuFries />
-              </button>
-            </div>
+            <MobileMenu>
+              <ul className="py-2 flex flex-col w-full items-center ">
+                <LinkBox
+                  url={url}
+                  classNames={mobileMenuItemsStyles}
+                  href="/work"
+                >
+                  work
+                </LinkBox>
+                <LinkBox
+                  url={url}
+                  href="/certificat"
+                  classNames={mobileMenuItemsStyles}
+                >
+                  certificates
+                </LinkBox>
+                <LinkBox
+                  url={url}
+                  href="/contact"
+                  classNames={mobileMenuItemsStyles}
+                >
+                  contact
+                </LinkBox>
+              </ul>
+            </MobileMenu>
           </div>
         </div>
       </div>

@@ -5,11 +5,12 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        favColor: "#b2ff12",
+        favColorglow: "#b2df11",
       },
       fontFamily: {
         Playfair: ["Playfair Display", "serif"],
