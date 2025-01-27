@@ -11,7 +11,7 @@ interface NavProps {
 
 const Navbar: React.FC<NavProps> = ({ url, classNames }) => {
   const mobileMenuItemsStyles =
-    "w-full hover:bg-gray-300 dark:hover:bg-zinc-600 py-1  text-center";
+    "w-full hover:bg-gray-300 dark:hover:bg-zinc-600 px-3 py-1 text-center text-sm";
 
   return (
     // TODO: change the bg leter:
@@ -24,7 +24,7 @@ const Navbar: React.FC<NavProps> = ({ url, classNames }) => {
             <Logo />
           </h1>
         </div>
-        <ul className="hidden flex-grow md:flex flex-col md:flex-row w-full md:w-auto items-center mt-4 md:mt-0">
+        <ul className="hidden flex-grow sm:flex flex-col sm:flex-row w-full sm:w-auto items-center mt-4 sm:mt-0">
           <LinkBox url={url} href="/work">
             work
           </LinkBox>
@@ -37,9 +37,9 @@ const Navbar: React.FC<NavProps> = ({ url, classNames }) => {
         </ul>
         <div className="flex-1 text-end self-center">
           <ToggleTheme />
-          <div className="ml-2 inline-block md:hidden">
+          <div className="ml-2 inline-block sm:hidden">
             <MobileMenu>
-              <ul className="py-2 flex flex-col w-full items-center ">
+              <ul className="py-1 flex flex-col w-full items-center ">
                 <LinkBox
                   url={url}
                   classNames={mobileMenuItemsStyles}
