@@ -1,10 +1,15 @@
 import BlurTextChunk from "@/components/blur-text-chunk";
+import ContentBox from "@/components/content-box";
+import MediaBox from "@/components/media-box";
+import SectionWrapper from "@/components/section-wrapper";
+import TimeLine from "@/components/time-line";
+import Link from "next/link";
 
 const Home = () => {
   return (
-    <div className="w-full px-4 mx-auto border-dashed">
-      <section className="px-2 py-4 sm:p-6 md:p-8 leading-6 font-mono tracking-tighter space-y-20">
-        <p className="text-justify indent-5">
+    <div className="w-full px-6 sm:px-8 md:px-10 mx-auto border-dashed">
+      <SectionWrapper>
+        <p className="text-center indent-5 font-Nunito text-lg sm:text-xl md:text-2xl">
           Hey, I&apos;m{" "}
           <BlurTextChunk
             toggleLabel="Ali"
@@ -18,10 +23,9 @@ const Home = () => {
             <BlurTextChunk
               toggleLabel="passion"
               text=" for building services/stuff i want. "
-              noHover={true}
             />
           </BlurTextChunk>
-          I enjoy{" "}
+          I thrive on{" "}
           <BlurTextChunk
             toggleLabel="exploring"
             text=" all aspects of creating products, from brainstorming and designing to 
@@ -38,7 +42,23 @@ const Home = () => {
             text=" to code until AI rips software from my speedy Vim fingers."
           />
         </p>
-      </section>
+      </SectionWrapper>
+      <SectionWrapper>
+        <ContentBox title="My Changelog:">
+          <TimeLine timeRange="2022"> Bacaloria degree, Casablanca.</TimeLine>
+          <TimeLine timeRange="2023 - current">
+            Pursuing Licence (Bachelor) degree in software engineering at
+            Abdelmalek Essaadi University, Tetouan.
+          </TimeLine>
+          <TimeLine timeRange="2023 - 2024">
+            Worked with InfoMath club team (
+            <Link href="/certificates">Design office</Link>).
+          </TimeLine>
+          <TimeLine timeRange="2024 - current">
+            Head of organizing council at InfoMath club.
+          </TimeLine>
+        </ContentBox>
+      </SectionWrapper>
     </div>
   );
 };
