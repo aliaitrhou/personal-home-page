@@ -16,7 +16,7 @@ const Navbar: React.FC<NavProps> = ({ url, classNames }) => {
   return (
     // TODO: change the bg leter:
     <nav
-      className={`fixed shadow-sm top-0 left-0 right-0 z-2 w-full bg-[#fffff40] dark:bg-[#20202380]  backdrop-blur-sm ${classNames}`}
+      className={`fixed shadow-sm top-0 left-0 right-0 z-20 w-full bg-[#fffff40] dark:bg-[#20202380]  backdrop-blur-sm ${classNames}`}
     >
       <div className="relative flex p-2 max-w-4xl flex-wrap mx-auto justify-between">
         <div className="flex items-center mr-5">
@@ -25,10 +25,10 @@ const Navbar: React.FC<NavProps> = ({ url, classNames }) => {
           </h1>
         </div>
         <ul className="hidden flex-grow sm:flex flex-col sm:flex-row w-full sm:w-auto items-center mt-4 sm:mt-0">
-          <LinkBox url={url} href="/work">
-            work
+          <LinkBox url={url} href="/projects">
+            projects
           </LinkBox>
-          <LinkBox url={url} href="/certificat">
+          <LinkBox url={url} href="/certificates">
             certificates
           </LinkBox>
           <LinkBox url={url} href="/contact">
@@ -43,13 +43,13 @@ const Navbar: React.FC<NavProps> = ({ url, classNames }) => {
                 <LinkBox
                   url={url}
                   classNames={mobileMenuItemsStyles}
-                  href="/work"
+                  href="/projects"
                 >
-                  work
+                  projects
                 </LinkBox>
                 <LinkBox
                   url={url}
-                  href="/certificat"
+                  href="/certificates"
                   classNames={mobileMenuItemsStyles}
                 >
                   certificates
