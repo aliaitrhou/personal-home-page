@@ -9,8 +9,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        favColor: "#b2ff12",
-        favColorglow: "#b2df11",
+        NeonLime: {
+          100: "#e5ffbf",
+          200: "#d0ff8f",
+          300: "#bfff5f",
+          400: "#aaff2f",
+          500: "#b2ff12",
+          600: "#86cc0e",
+          700: "#5d990a",
+          800: "#3a6606",
+          900: "#1d3303",
+        },
       },
       fontFamily: {
         Playfair: ["Playfair Display", "serif"],
