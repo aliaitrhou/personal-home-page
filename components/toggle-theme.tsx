@@ -37,7 +37,7 @@ const ToggleTheme = () => {
 
   return (
     <button
-      className="p-[9px] rounded-full bg-orange-500 hover:bg-orange-600 dark:bg-favColor dark:hover:bg-favColorglow focus:outline-none"
+      className="group z-10 p-[9px] rounded-full bg-orange-500 hover:bg-orange-600 group-hover:bg-orange-600 dark:bg-NeonLime-500 dark:hover:bg-NeonLime-600 focus:outline-none"
       onClick={toggleLocalStorageValue}
     >
       {t === "light" ? (
@@ -45,6 +45,7 @@ const ToggleTheme = () => {
       ) : (
         <FiSun color="black" />
       )}
+      <div className="absolute -z-10 top-0 right-[23.5px] hidden sm:inline-block w-1 h-[50%]  bg-orange-500 group-hover:bg-orange-600 dark:bg-NeonLime-500 dark:group-hover:bg-NeonLime-600" />
     </button>
   );
 };
