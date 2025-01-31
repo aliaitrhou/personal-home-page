@@ -8,3 +8,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.inputs {
+  @apply focus:outline-none border-2 border-zinc-600  dark:border-zinc-600  focus:border-orange-500 dark:focus:border-NeonLime-600 placeholder-slate-400 dark:placeholder-zinc-500 px-3 py-2 rounded-md font-medium bg-white dark:bg-zinc-700;
+}
