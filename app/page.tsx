@@ -55,7 +55,10 @@ const Home = () => {
           <TimeLine timeRange="2023 - 2024">
             Worked as &quot;
             <Link
-              href="/certificates"
+              href={{
+                pathname: "/certificates",
+                query: { cert: "infomath" },
+              }}
               className="text-blue-500 dark:text-teal-500 hover:underline underline-offset-2 decoration-blue-500 dark:decoration-teal-500"
             >
               Design officer
