@@ -33,7 +33,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
   return (
     <>
       <div className={`flex justify-center ${position}`}>
-        <div className="relative max-w-full sm:max-w-[55%] rounded-lg shadow-md dark:shadow-black overflow-hidden">
+        <div className="relative max-w-full sm:max-w-[55%] rounded-lg shadow-xl overflow-hidden">
           <Image
             src={path}
             alt={alt}
