@@ -8,7 +8,7 @@ interface Props {
 const ContentBox: React.FC<Props> = ({ title, children }) => {
   return (
     <div className="sm:px-4 md:px-6 my-2 sm:my-4 ">
-      <h2 className="pb-2 text-sm sm:text-md md:text-lg font-bold underline underline-offset-[4px] decoration-blue-600/45 dark:decoration-teal-400/45 decoration-2 decoration-wavy mb-2 sm:mb-4">
+      <h2 className="px-1 text-base/4 sm:text-base/5 md:text-base/6 font-bold mb-2 sm:mb-4 bg-orange-300 text-orange-500  border-b-orange-500 dark:bg-NeonLime-300/60 dark:text-NeonLime-500 rounded-sm w-fit">
         {title}
       </h2>
       <div>{children}</div>
