@@ -39,21 +39,23 @@ const Certificates = () => {
   const certToOpen = params.get("cert");
 
   return (
-    <Suspense fallback={<ImSpinner9 className="animate-spin mx-auto" />}>
-      <div className="w-full px-4 sm:px-6  mx-auto pt-4 pb-8">
-        <section className="flex flex-col gap-8 sm:gap-4">
-          {certs.map((cert, index) => (
+    <div className="w-full px-4 sm:px-6  mx-auto pt-4 pb-8">
+      <section className="flex flex-col gap-8 sm:gap-4">
+        {certs.map((cert, index) => (
+          <Suspense
+            fallback={<ImSpinner9 className="animate-spin mx-auto" />}
+            key={index}
+          >
             <CertificateBox
-              key={index}
               position={index % 2 == 0 ? "sm:justify-start" : "sm:justify-end"}
               alt={cert.alt}
               path={cert.src}
               openCert={cert.name === certToOpen ? true : false}
             />
-          ))}
-        </section>
-      </div>
-    </Suspense>
+          </Suspense>
+        ))}
+      </section>
+    </div>
   );
 };
 

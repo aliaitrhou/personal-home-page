@@ -24,9 +24,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
   // cause it keeps the infomath certification open
   const removeQueryParams = () => {
     const params = new URLSearchParams(searchParams.toString());
-    params.forEach((_, key) => {
-      params.delete(key);
-    });
+    params.delete("cert");
     const newUrl = `${window.location.pathname}?${params.toString()}`;
     window.history.replaceState(null, "", newUrl);
   };
