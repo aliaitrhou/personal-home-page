@@ -42,17 +42,13 @@ const Certificates = () => {
     <div className="w-full px-4 sm:px-6  mx-auto pt-4 pb-8">
       <section className="flex flex-col gap-8 sm:gap-4">
         {certs.map((cert, index) => (
-          <Suspense
-            fallback={<ImSpinner9 className="animate-spin mx-auto" />}
+          <CertificateBox
             key={index}
-          >
-            <CertificateBox
-              position={index % 2 == 0 ? "sm:justify-start" : "sm:justify-end"}
-              alt={cert.alt}
-              path={cert.src}
-              openCert={cert.name === certToOpen ? true : false}
-            />
-          </Suspense>
+            position={index % 2 == 0 ? "sm:justify-start" : "sm:justify-end"}
+            alt={cert.alt}
+            path={cert.src}
+            openCert={cert.name === certToOpen ? true : false}
+          />
         ))}
       </section>
     </div>

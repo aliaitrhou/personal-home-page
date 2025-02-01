@@ -3,6 +3,8 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { usePathname } from "next/navigation";
+import { Suspense } from "react";
+import { ImSpinner9 } from "react-icons/im";
 
 export default function ClientLayout({
   children,
@@ -14,7 +16,9 @@ export default function ClientLayout({
   return (
     <main>
       <Navbar url={pathname} />
-      {children}
+      <Suspense fallback={<ImSpinner9 className="animate-spin mx-auto" />}>
+        {children}
+      </Suspense>
       <Footer />
     </main>
   );
