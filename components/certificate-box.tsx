@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import { useSearchParams } from "next/navigation";
 
@@ -33,7 +33,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
   return (
     <>
       <div className={`flex justify-center ${position}`}>
-        <div className="relative max-w-full sm:max-w-[55%] rounded-lg shadow-xl overflow-hidden">
+        <div className="relative max-w-full sm:max-w-[55%] rounded-lg overflow-hidden">
           <Image
             src={path}
             alt={alt}

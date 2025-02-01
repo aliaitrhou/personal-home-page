@@ -10,11 +10,6 @@ import CertificateBox from "@/components/certificate-box";
 
 const certs = [
   {
-    src: fcc,
-    name: "web-design",
-    alt: "web design certeficate",
-  },
-  {
     src: infomath,
     name: "infomath",
     alt: "design officer certeficate",
@@ -23,6 +18,11 @@ const certs = [
     src: ai,
     name: "ai-developer",
     alt: "ai dev certeficate",
+  },
+  {
+    src: fcc,
+    name: "web-design",
+    alt: "web design certeficate",
   },
   {
     src: advancedReact,
@@ -37,7 +37,7 @@ const Certificates = () => {
   const certToOpen = params.get("cert");
 
   return (
-    <div className="w-full px-4 sm:px-6  mx-auto pt-4">
+    <div className="w-full px-4 sm:px-6  mx-auto pt-4 pb-8">
       <section className="flex flex-col gap-8 sm:gap-4">
         {certs.map((cert, index) => (
           <CertificateBox
