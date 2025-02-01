@@ -1,6 +1,7 @@
 "use client";
 
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 import { usePathname } from "next/navigation";
 
 export default function ClientLayout({
@@ -14,6 +15,7 @@ export default function ClientLayout({
     <main>
       <Navbar url={pathname} />
       {children}
+      <Footer />
     </main>
   );
 }
