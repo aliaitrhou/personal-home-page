@@ -18,12 +18,12 @@ const ToggleTheme = () => {
     // checking for system current theme
     if (
       typeof window != "undefined" &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
+      window.matchMedia("(prefers-color-scheme: light)").matches
     ) {
-      return "dark";
+      return "light";
     }
 
-    return "light";
+    return "dark";
   });
 
   function toggleLocalStorageValue() {
