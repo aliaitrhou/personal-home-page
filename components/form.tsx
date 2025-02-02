@@ -119,7 +119,7 @@ const Form: React.FC<Props> = ({ getStatus }) => {
         .then((_response) =>
           handleServerResponse(
             true,
-            "Your message has been successfully submitted to Me :)",
+            "Oh! I have successfully received your message :)",
           ),
         )
         .catch((e) => handleServerResponse(false, e.response.data.error));
