@@ -6,16 +6,25 @@ interface Props {
   url: string;
   children: React.ReactNode | string;
   classNames?: string;
+  onClick?: () => void;
 }
 
-const LinkBox: React.FC<Props> = ({ href, url, children, classNames }) => {
+const LinkBox: React.FC<Props> = ({
+  href,
+  url,
+  children,
+  classNames,
+  onClick,
+}) => {
   const active = url === href;
   return (
-    <li
+    <Link
       className={`p-2 text-lg font-thin hover:underline hover:decoration-1 hover:underline-offset-4 ${active ? "text-orange-500 dark:text-NeonLime-500 font-normal" : "text-gray-800 dark:text-gray-300 font-thin"} ${classNames}`}
+      href={href}
+      onClick={onClick}
     >
-      <Link href={href}>{children}</Link>
-    </li>
+      <li>{children}</li>
+    </Link>
   );
 };
 

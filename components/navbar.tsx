@@ -10,13 +10,10 @@ interface NavProps {
 }
 
 const Navbar: React.FC<NavProps> = ({ url, classNames }) => {
-  const mobileMenuItemsStyles =
-    "w-full hover:bg-gray-300 dark:hover:bg-zinc-600 px-3 py-1 text-center text-sm";
-
   return (
     // TODO: change the bg leter:
     <nav
-      className={`fixed shadow-sm top-0 left-0 right-0 z-20 w-full bg-[#fffff40] dark:bg-[#20202380]  backdrop-blur-sm ${classNames}`}
+      className={`fixed top-0 left-0 right-0 z-20 w-full bg-[#ffffff40] dark:bg-[#20202380] backdrop-blur-sm ${classNames}`}
     >
       <div className="relative flex p-2 max-w-4xl flex-wrap mx-auto justify-between">
         <div className="flex items-center mr-5">
@@ -38,31 +35,7 @@ const Navbar: React.FC<NavProps> = ({ url, classNames }) => {
         <div className="flex-1 text-end self-center">
           <ToggleTheme />
           <div className="ml-2 inline-block sm:hidden">
-            <MobileMenu>
-              <ul className="py-1 flex flex-col w-full items-center ">
-                <LinkBox
-                  url={url}
-                  classNames={mobileMenuItemsStyles}
-                  href="/projects"
-                >
-                  projects
-                </LinkBox>
-                <LinkBox
-                  url={url}
-                  href="/certificates"
-                  classNames={mobileMenuItemsStyles}
-                >
-                  certificates
-                </LinkBox>
-                <LinkBox
-                  url={url}
-                  href="/contact"
-                  classNames={mobileMenuItemsStyles}
-                >
-                  contact
-                </LinkBox>
-              </ul>
-            </MobileMenu>
+            <MobileMenu path={url} />
           </div>
         </div>
       </div>
