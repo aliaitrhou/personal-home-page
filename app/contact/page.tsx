@@ -26,7 +26,7 @@ const Contact = () => {
             type={status.error ? "error" : "success"}
           />
         )}
-        <h2 className="font-extrabold text-2xl xs:text-3xl sm:text-3xl md:text-4xl text-zinc-500/60 dark:text-zinc-500">
+        <h2 className="font-extrabold text-2xl xs:text-3xl sm:text-3xl md:text-4xl text-zinc-500/80 dark:text-zinc-500">
           Connect with Me
         </h2>
         <Form getStatus={getStatus} />

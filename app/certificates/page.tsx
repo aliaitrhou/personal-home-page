@@ -7,8 +7,6 @@ import infomath from "@/public/certificates/infomath.png";
 import ai from "@/public/certificates/ai-path.png";
 import advancedReact from "@/public/certificates/react.png";
 import CertificateBox from "@/components/certificate-box";
-import { Suspense } from "react";
-import { ImSpinner9 } from "react-icons/im";
 
 const certs = [
   {
@@ -45,8 +43,10 @@ const Certificates = () => {
           <CertificateBox
             key={index}
             position={index % 2 == 0 ? "sm:justify-start" : "sm:justify-end"}
+            isLeftItem={index % 2 == 0}
             alt={cert.alt}
             path={cert.src}
+            delay={index * 0.2}
             openCert={cert.name === certToOpen ? true : false}
           />
         ))}

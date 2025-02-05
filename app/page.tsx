@@ -10,7 +10,7 @@ import { FaChevronRight } from "react-icons/fa";
 const Home = () => {
   return (
     <div className="w-full px-4 sm:px-6 md:px-10 mx-auto pt-4">
-      <SectionWrapper>
+      <SectionWrapper delay={0}>
         <p className="text-center indent-5 font-Nunito text-lg sm:text-xl md:text-2xl">
           Hey, I&apos;m{" "}
           <BlurTextChunk
@@ -45,7 +45,7 @@ const Home = () => {
           />
         </p>
       </SectionWrapper>
-      <SectionWrapper>
+      <SectionWrapper delay={0.3}>
         <ContentBox title="My Changelog:">
           <TimeLine timeRange="2022"> Bacaloria degree, Casablanca.</TimeLine>
           <TimeLine timeRange="2023 - current">
@@ -53,7 +53,7 @@ const Home = () => {
             Abdelmalek Essaadi University, Tetouan.
           </TimeLine>
           <TimeLine timeRange="2023 - 2024">
-            Worked as &quot;
+            Worked as{" "}
             <Link
               href={{
                 pathname: "/certificates",
@@ -63,15 +63,15 @@ const Home = () => {
             >
               Design officer
             </Link>
-            &quot; with InfoMath team which is the computer science club in
-            University.
+            {"  "}
+            with InfoMath team which is the computer science club in University.
           </TimeLine>
           <TimeLine timeRange="2024 - current">
             Head of organizing council at InfoMath club.
           </TimeLine>
         </ContentBox>
       </SectionWrapper>
-      <SectionWrapper>
+      <SectionWrapper delay={0.6}>
         <ContentBox title="Me Online:">
           <div className="flex flex-col flex-wrap sm:flex-nowrap justify-center gap-2 sm:gap-3 md:gap-5 font-bold">
             <MediaBox platform="Github" url="https://github.com/aliaitrhou">

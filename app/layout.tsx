@@ -14,8 +14,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="selection:bg-orange-500/40 dark:selection:bg-NeonLime-600/45 dark:selection:text-black max-w-3xl font-Nunito mx-auto pt-14 bg-indigo-50 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200">
-        <ClientLayout>{children}</ClientLayout>
+      <body className="selection:bg-orange-500/40 dark:selection:bg-NeonLime-600/45 dark:selection:text-black max-w-3xl font-Nunito mx-auto pt-14 bg-amber-50 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200">
+        <ClientLayout
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+        >
+          {children}
+        </ClientLayout>
       </body>
     </html>
   );
