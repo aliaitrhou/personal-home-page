@@ -1,11 +1,10 @@
 import BlurTextChunk from "@/components/blur-text-chunk";
 import ContentBox from "@/components/content-box";
+import EmailButton from "@/components/email-button";
 import MediaBox from "@/components/media-box";
 import SectionWrapper from "@/components/section-wrapper";
 import TimeLine from "@/components/time-line";
 import Link from "next/link";
-import { IoMdMail } from "react-icons/io";
-import { FaChevronRight } from "react-icons/fa";
 
 const Home = () => {
   return (
@@ -88,16 +87,7 @@ const Home = () => {
             </MediaBox>
           </div>
         </ContentBox>
-        <div className="group flex items-center justify-center mt-8">
-          <Link
-            href="/contact"
-            className="flex items-center gap-3 py-2 px-4 sm:px-6 rounded-md bg-orange-500 text-white dark:bg-NeonLime-500 dark:text-black"
-          >
-            <IoMdMail />
-            <p>Send Email</p>
-            <FaChevronRight className="group-hover:translate-x-2 transition-transform duration-300" />
-          </Link>
-        </div>
+        <EmailButton />
       </SectionWrapper>
     </div>
   );
