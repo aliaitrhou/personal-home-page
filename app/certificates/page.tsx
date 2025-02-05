@@ -2,34 +2,8 @@
 
 import React from "react";
 import { useSearchParams } from "next/navigation";
-import fcc from "@/public/certificates/web-design.png";
-import infomath from "@/public/certificates/infomath.png";
-import ai from "@/public/certificates/ai-path.png";
-import advancedReact from "@/public/certificates/react.png";
 import CertificateBox from "@/components/certificate-box";
-
-const certs = [
-  {
-    src: infomath,
-    name: "infomath",
-    alt: "design officer certeficate",
-  },
-  {
-    src: ai,
-    name: "ai-developer",
-    alt: "ai dev certeficate",
-  },
-  {
-    src: fcc,
-    name: "web-design",
-    alt: "web design certeficate",
-  },
-  {
-    src: advancedReact,
-    name: "advnaced-react",
-    alt: "advanced react certeficate",
-  },
-];
+import { certs } from "@/certificatesData";
 
 const Certificates = () => {
   const params = useSearchParams();
@@ -42,12 +16,13 @@ const Certificates = () => {
         {certs.map((cert, index) => (
           <CertificateBox
             key={index}
+            title={cert.title}
+            desc={cert.desc}
             position={index % 2 == 0 ? "sm:justify-start" : "sm:justify-end"}
-            isLeftItem={index % 2 == 0}
             alt={cert.alt}
             path={cert.src}
             delay={index * 0.2}
-            openCert={cert.name === certToOpen ? true : false}
+            openCert={cert.id === certToOpen ? true : false}
           />
         ))}
       </section>

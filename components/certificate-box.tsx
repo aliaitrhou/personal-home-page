@@ -7,19 +7,21 @@ import CertificateWrapper from "./certificate-wrapper";
 import { createPortal } from "react-dom";
 
 interface CertificateProps {
+  title: string;
+  desc: string;
   alt: string;
   path: StaticImageData;
   position: string;
-  isLeftItem: boolean;
   openCert: boolean;
   delay: number;
 }
 
 const CertificateBox: React.FC<CertificateProps> = ({
+  title,
+  desc,
   alt,
   path,
   position,
-  isLeftItem,
   delay,
   openCert = false,
 }) => {
@@ -40,17 +42,23 @@ const CertificateBox: React.FC<CertificateProps> = ({
       <div className={`flex justify-center ${position}`}>
         <CertificateWrapper
           delay={delay}
-          className="relative max-w-full sm:max-w-[55%] rounded-lg overflow-hidden"
+          className="relative max-w-full sm:max-w-[50%] rounded-lg overflow-hidden space-y-2"
         >
           <Image
             src={path}
             alt={alt}
-            className={`object-fill w-full aspect-[14/8] inner-custom rounded-lg sm:cursor-pointer border-2 ${openCert ? "border-blue-500 dark:border-teal-500" : ""} hover:border-orange-500 dark:hover:border-NeonLime-600`}
+            className={`object-fill w-full aspect-[14/8] inner-custom rounded-md sm:cursor-pointer border border-slate-300 dark:border-zinc-700 ${openCert ? "border-blue-500 dark:border-teal-500" : ""}`}
             onClick={() => {
               setExpand(true);
               removeQueryParams();
             }}
           />
+          <div className="text-center">
+            <h3 className="text-xl text-zinc-600  dark:text-zinc-300 font-bold">
+              {title}
+            </h3>
+            <p className="text-md text-zinc-500 font-normal">{desc}</p>
+          </div>
         </CertificateWrapper>
       </div>
 
@@ -63,7 +71,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
             <Image
               src={path}
               alt={alt}
-              className="max-w-[80%] max-h-[85%] md:max-w-[60%] md:max-h-[65%] rounded-xl shadow-2xl  border-2 border-orange-500 dark:border-NeonLime-600"
+              className="max-w-[80%] max-h-[85%] md:max-w-[60%] md:max-h-[65%] rounded-xl shadow-2xl  border-2 border-black dark:border-white"
             />
           </div>,
           document.body,
