@@ -2,6 +2,7 @@ import fcc from "@/public/certificates/web-design.png";
 import infomath from "@/public/certificates/infomath.png";
 import ai from "@/public/certificates/ai-path.png";
 import advancedReact from "@/public/certificates/react.png";
+import fs from "@/public/certificates/fs.png";
 
 export const certs = [
   {
@@ -33,17 +34,10 @@ export const certs = [
     alt: "advanced react certeficate",
   },
   {
-    title: "Web Design",
-    desc: "Certificate in Web Design from FCC, covering front-end web development and responsive design.",
-    src: fcc,
-    id: "web-design",
-    alt: "web design certeficate",
-  },
-  {
-    title: "Advanced React",
-    desc: "Advanced React certification, offering in-depth knowledge of React components, hooks, and performance optimization techniques.",
-    src: advancedReact,
-    id: "advanced-react",
-    alt: "advanced react certeficate",
+    title: "Participation Certificate",
+    desc: "Certified for mentoring and assisting in student registration at the Faculty of Sciences, Tétouan, for one month.",
+    src: fs,
+    id: "fs-tetouan",
+    alt: "certificate of participation",
   },
 ];
