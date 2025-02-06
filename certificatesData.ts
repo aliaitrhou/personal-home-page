@@ -3,6 +3,7 @@ import infomath from "@/public/certificates/infomath.png";
 import ai from "@/public/certificates/ai-path.png";
 import advancedReact from "@/public/certificates/react.png";
 import fs from "@/public/certificates/fs.png";
+import ml from "@/public/certificates/ml.png";
 
 export const certs = [
   {
@@ -21,8 +22,15 @@ export const certs = [
   },
   {
     title: "Web Design",
-    desc: "Certificate in Web Design from FCC, covering front-end web development, user experience, and responsive design.",
+    desc: "Certificate in Web Design from FCC, covering front-end web development and responsive design.",
     src: fcc,
+    id: "web-design",
+    alt: "web design certeficate",
+  },
+  {
+    title: "ML Workshop",
+    desc: "Completed a Machine Learning workshop on supervised learning and neural networks.",
+    src: ml,
     id: "web-design",
     alt: "web design certeficate",
   },
