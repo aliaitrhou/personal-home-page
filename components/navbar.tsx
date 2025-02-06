@@ -23,13 +23,13 @@ const Navbar: React.FC<NavProps> = ({ url, classNames }) => {
         </div>
         <ul className="hidden flex-grow sm:flex flex-col sm:flex-row w-full sm:w-auto items-center mt-4 sm:mt-0">
           <LinkBox url={url} href="/projects">
-            projects
+            Projects
           </LinkBox>
           <LinkBox url={url} href="/certificates">
-            certificates
+            Certificates
           </LinkBox>
           <LinkBox url={url} href="/contact">
-            contact
+            Contact
           </LinkBox>
         </ul>
         <div className="flex-1 text-end self-center">
