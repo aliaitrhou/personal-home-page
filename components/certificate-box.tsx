@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image, { StaticImageData } from "next/image";
 import { useSearchParams } from "next/navigation";
 import CertificateWrapper from "./certificate-wrapper";
@@ -26,6 +26,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
   openCert = false,
 }) => {
   const [expand, setExpand] = useState(openCert || false);
+  const [isClient, setIsClient] = useState(false);
   const searchParams = useSearchParams();
 
   // i used this function to remove the cert query param from the url
@@ -37,6 +38,9 @@ const CertificateBox: React.FC<CertificateProps> = ({
     window.history.replaceState(null, "", newUrl);
   };
 
+  useEffect(() => {
+    setIsClient(true);
+  });
   return (
     <>
       <div className={`flex justify-center ${position}`}>
@@ -47,7 +51,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
           <Image
             src={path}
             alt={alt}
-            className={`object-fill w-full aspect-[14/8] inner-custom rounded-md sm:cursor-pointer border border-slate-300 dark:border-zinc-700 ${openCert ? "border-blue-500 dark:border-teal-500" : ""}`}
+            className={`object-fill w-full aspect-[14/8] inner-custom rounded-md sm:cursor-pointer ${openCert ? "border-2 border-orange-500 dark:border-NeonLime-600" : ""} sm:border-2 sm:border-slate-300 sm:dark:border-zinc-700`}
             onClick={() => {
               setExpand(true);
               removeQueryParams();
@@ -63,6 +67,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
       </div>
 
       {expand &&
+        isClient &&
         createPortal(
           <div
             className="hidden fixed inset-0 sm:flex bg-black bg-opacity-60 items-center justify-center z-50"
