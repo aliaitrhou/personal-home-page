@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import contactDark from "@/public/imgs/contact-dark.png";
+import contactLight from "@/public/imgs/contact-light.png";
 import Link from "next/link";
 import Image from "next/image";
 import { IoMdMail } from "react-icons/io";
@@ -12,6 +13,7 @@ const EmailButton = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [mouseX, setMouseX] = useState(0);
   const [rondedPosition, setRondedPosition] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const linkRef = useRef<HTMLAnchorElement | null>(null);
 
@@ -36,6 +38,22 @@ const EmailButton = () => {
     }
   }, [mouseX]);
 
+  useEffect(() => {
+    const checkDarkMode = () => {
+      setIsDarkMode(document.documentElement.classList.contains("dark"));
+    };
+
+    checkDarkMode();
+
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="relative flex items-center justify-center mt-8">
       <AnimatePresence>
@@ -53,10 +71,10 @@ const EmailButton = () => {
               type: "spring",
               damping: 20,
             }}
-            className="hidden sm:flex absolute -top-32 border-4 border-white rounded-lg shadow-xl overflow-hidden"
+            className="hidden sm:flex absolute -top-32 border-4 border-black/70 dark:border-white rounded-lg shadow-xl overflow-hidden"
           >
             <Image
-              src={contactDark}
+              src={isDarkMode ? contactDark : contactLight}
               alt="contact page"
               width={200}
               className="aspect-video"
