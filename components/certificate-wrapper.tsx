@@ -20,9 +20,8 @@ const cetificateWrapper = ({
       variants={{
         hidden: { opacity: 0, y: 20 },
         enter: { opacity: 1, y: 0 },
-        exit: { opacity: 0, y: 0 },
       }}
-      transition={{ duration: 0.2, delay }}
+      transition={{ duration: 0.4, delay }}
       className={className}
     >
       {children}
