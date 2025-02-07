@@ -1,4 +1,4 @@
-import BlurTextChunk from "@/components/blur-text-chunk";
+import React from "react";
 import ContentBox from "@/components/content-box";
 import EmailButton from "@/components/email-button";
 import MediaBox from "@/components/media-box";
@@ -8,40 +8,17 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <div className="w-full px-4 sm:px-6 md:px-10 mx-auto pt-4">
+    <div className="w-full px-3 sm:px-6 md:px-10 mx-auto pt-4 space-y-3">
       <SectionWrapper delay={0}>
-        <p className="text-center indent-5 font-Nunito text-lg sm:text-xl md:text-2xl">
-          Hey, I&apos;m{" "}
-          <BlurTextChunk
-            toggleLabel="Ali"
-            text=" a computer science student  "
-          />
-          <BlurTextChunk
-            toggleLabel="and"
-            text=" aspiring software developer based in Morocco. "
-          >
-            I have a{" "}
-            <BlurTextChunk
-              toggleLabel="passion"
-              text=" for building services and stuff i need/want, "
-            />
-          </BlurTextChunk>
-          which drives me{" "}
-          <BlurTextChunk
-            toggleLabel="to"
-            text=" explore all aspects of product creation— from brainstorming and designing to 
-        bringing ideas to life. "
-          ></BlurTextChunk>
-          I’m enjoying the process of{" "}
-          <BlurTextChunk
-            toggleLabel="learning"
-            text=" and creating things that feel meaningful "
-          />
-          and i have a{" "}
-          <BlurTextChunk
-            toggleLabel="plan"
-            text=" to code until AI rips software from my speedy Vim fingers."
-          />
+        <p className="text-center indent-5 font-Nunito text-xl xs:text-2xl text-zinc-700 dark:text-zinc-300">
+          Hey, I&apos;m Ali. Im not sure how to intro myself, but I&apos;ll say
+          a computer science student and aspiring software developer based in
+          Morocco. Driven by the desire to create stuff that meet my needs and
+          ambitions, I love everything related to product—from identifying
+          problems to designing and building software that not only makes me
+          proud but also motivates me to push forward and tackle the next
+          challenge. So my plan is to code until AI rips it from my speedy Vim
+          fingers.
         </p>
       </SectionWrapper>
       <SectionWrapper delay={0.3}>
@@ -72,18 +49,18 @@ const Home = () => {
       </SectionWrapper>
       <SectionWrapper delay={0.6}>
         <ContentBox title="Me Online:">
-          <div className="flex flex-col flex-wrap sm:flex-nowrap justify-center gap-2 sm:gap-3 md:gap-5 font-bold">
+          <div className="flex flex-col flex-wrap sm:flex-nowrap justify-center gap-2 sm:gap-3 md:gap-4 font-bold">
             <MediaBox platform="Github" url="https://github.com/aliaitrhou">
-              <p>@aliaitrhou</p>
+              <p>aliaitrhou</p>
             </MediaBox>
             <MediaBox platform="X/twitter" url="https://x.com/Ali_AitRahou">
-              <p>@Ali_AitRahou</p>
+              <p>Ali_AitRahou</p>
             </MediaBox>
             <MediaBox
               platform="Linkedin"
               url="https://www.linkedin.com/in/ali-aitrahou"
             >
-              <p>@ali-aitrahou</p>
+              <p>ali-aitrahou</p>
             </MediaBox>
           </div>
         </ContentBox>
