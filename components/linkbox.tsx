@@ -19,7 +19,7 @@ const LinkBox: React.FC<Props> = ({
   const active = url === href;
   return (
     <Link
-      className={`p-2 text-lg font-thin hover:underline hover:decoration-1 hover:underline-offset-4 ${active ? "text-orange-500 dark:text-NeonLime-500 font-normal" : "text-gray-800 dark:text-gray-300 font-thin"} ${classNames}`}
+      className={`p-2 text-md hover:underline hover:decoration-1 hover:underline-offset-4 ${active ? "text-orange-500 dark:text-NeonLime-500 font-normal" : "text-gray-800 dark:text-gray-300 font-thin"} ${classNames}`}
       href={href}
       onClick={onClick}
     >
