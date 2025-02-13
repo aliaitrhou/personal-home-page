@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useContext } from "react";
+import { useRef, useEffect, useContext, useState } from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { usePathname, useSelectedLayoutSegment } from "next/navigation";
@@ -74,7 +74,7 @@ export default function ClientLayout({
       path: "/",
     },
     {
-      title: "To My Portflio",
+      title: "To My Portfolio",
       path: "/projects",
     },
     {
