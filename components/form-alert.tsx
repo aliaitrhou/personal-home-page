@@ -12,7 +12,7 @@ const FormAlert = ({ message, type }: status) => {
 
   return (
     <div
-      className={`mx-auto rounded-md py-2 px-4 sm:px-6 flex flex-row items-center gap-3 ${err ? "border-2 border-red-500 bg-red-400/30 text-red-500" : "border-2 border-green-500 bg-green-500/30 text-green-500"} text-xs xs:text-sm sm:text-md font-bold`}
+      className={`w-full mx-auto rounded-md py-2 px-4 sm:px-6 flex flex-row items-center gap-3 ${err ? "border-2 border-red-500 bg-red-400/30 text-red-500" : "border-2 border-green-500 bg-green-500/30 text-green-500"} text-xs xs:text-sm sm:text-md font-bold`}
     >
       {err ? (
         <TbAlertTriangle className="size-6" />

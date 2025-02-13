@@ -135,7 +135,7 @@ const Form: React.FC<Props> = ({ getStatus }) => {
 
   return (
     <form
-      className="flex flex-col gap-3 w-full xs:px-4 sm:px-10 md:px-12"
+      className="flex flex-col gap-3 w-full"
       noValidate
       onSubmit={(e) => handleSubmit(e)}
     >
