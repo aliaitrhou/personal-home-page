@@ -16,9 +16,9 @@ const PageTitle: React.FC<Props> = ({ title, keyword }) => {
       <AnimatePresence mode="wait">
         <motion.div
           key={title}
-          initial={{ scale: 0.7, opacity: 0 }}
+          initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.7, opacity: 0 }}
+          exit={{ scale: 0.9, opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut", delay: 0.6 }}
           className="w-full text-2xl xs:text-3xl sm:text-4xl font-mplus font-medium text-center"
         >

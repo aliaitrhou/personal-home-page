@@ -19,7 +19,7 @@ const PageWrapper: React.FC<Props> = ({
   return (
     <div className={classNames}>
       <div className="relative w-full">
-        <div className="relative w-full h-[250px] -mt-12">
+        <div className="relative w-full h-[250px] ">
           <video
             autoPlay
             loop
