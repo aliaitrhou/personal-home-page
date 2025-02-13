@@ -11,7 +11,6 @@ interface CertificateProps {
   desc: string;
   alt: string;
   path: StaticImageData;
-  position: string;
   openCert: boolean;
   delay: number;
 }
@@ -21,7 +20,6 @@ const CertificateBox: React.FC<CertificateProps> = ({
   desc,
   alt,
   path,
-  position,
   delay,
   openCert = false,
 }) => {
@@ -40,31 +38,30 @@ const CertificateBox: React.FC<CertificateProps> = ({
 
   useEffect(() => {
     setIsClient(true);
-  });
+  }, []);
+
   return (
     <>
-      <div className={`flex justify-center ${position}`}>
-        <CertificateWrapper
-          delay={delay}
-          className="relative max-w-full sm:max-w-[50%] rounded-lg overflow-hidden space-y-2"
-        >
-          <Image
-            src={path}
-            alt={alt}
-            className={`object-fill w-full aspect-[14/8] inner-custom rounded-md sm:cursor-pointer ${openCert ? "border-2 border-orange-500 dark:border-NeonLime-600" : ""} sm:border-2 sm:border-slate-300 sm:dark:border-zinc-700`}
-            onClick={() => {
-              setExpand(true);
-              removeQueryParams();
-            }}
-          />
-          <div className="text-center">
-            <h3 className="text-xl text-zinc-600  dark:text-zinc-300 font-bold">
-              {title}
-            </h3>
-            <p className="text-md text-zinc-500 font-normal">{desc}</p>
-          </div>
-        </CertificateWrapper>
-      </div>
+      <CertificateWrapper
+        delay={delay}
+        className="relative w-full overflow-hidden space-y-2"
+      >
+        <Image
+          src={path}
+          alt={alt}
+          className={`object-fill w-full aspect-[14/8] inner-custom rounded-md sm:cursor-pointer ${openCert ? "border-4 border-orange-500 dark:border-NeonLime-600" : ""} sm:border-2 sm:border-slate-400`}
+          onClick={() => {
+            setExpand(true);
+            removeQueryParams();
+          }}
+        />
+        <div className="text-center">
+          <h3 className="text-xl text-zinc-600  dark:text-zinc-300 font-bold">
+            {title}
+          </h3>
+          <p className="text-md text-zinc-500 font-normal">{desc}</p>
+        </div>
+      </CertificateWrapper>
 
       {expand &&
         isClient &&
