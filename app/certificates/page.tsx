@@ -12,13 +12,12 @@ const Certificates = () => {
 
   return (
     <div className="w-full px-4 sm:px-6  mx-auto pt-4 pb-8">
-      <section className="flex flex-col gap-8 sm:gap-4">
+      <section className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10">
         {certs.map((cert, index) => (
           <CertificateBox
             key={index}
             title={cert.title}
             desc={cert.desc}
-            position={index % 2 == 0 ? "sm:justify-start" : "sm:justify-end"}
             alt={cert.alt}
             path={cert.src}
             delay={index * 0.2}

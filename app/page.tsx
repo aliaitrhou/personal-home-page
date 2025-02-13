@@ -8,21 +8,20 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <div className="w-full px-3 sm:px-6 md:px-10 mx-auto pt-4 space-y-3">
+    <div className="w-full px-3 sm:px-6 md:px-10 mx-auto py-4 space-y-3 xs:space-y-4 sm:space-y-6">
       <SectionWrapper delay={0}>
-        <p className="text-center indent-5 font-Nunito text-xl xs:text-2xl text-zinc-700 dark:text-zinc-300">
-          Hey, I&apos;m Ali. Im not sure how to intro myself, but I&apos;ll say
-          a computer science student and aspiring software developer based in
-          Morocco. Driven by the desire to create stuff that meet my needs and
-          ambitions, I love everything related to product—from identifying
-          problems to designing and building software that not only makes me
-          proud but also motivates me to push forward and tackle the next
-          challenge. So my plan is to code until AI rips it from my speedy Vim
-          fingers.
+        <p className="text-justify indent-5 font-Nunito font-normal text-xl xs:text-2xl text-zinc-700 dark:text-zinc-300">
+          Hey, I&apos;m Ali. Not sure how to intro myself, but I&apos;ll say am
+          a CS student and aspiring software developer based in Morocco. Driven
+          by the desire to create stuff that meet my needs and ambitions, I love
+          everything related to product creating from identifying problems to
+          designing and building software that not only makes me happy but also
+          motivates me to push forward and tackle the next. i have a plan to
+          code until AI rips it from my speedy Vim fingers.
         </p>
       </SectionWrapper>
       <SectionWrapper delay={0.3}>
-        <ContentBox title="My Changelog:">
+        <ContentBox title="Changelog">
           <TimeLine timeRange="2022"> Bacaloria degree, Casablanca.</TimeLine>
           <TimeLine timeRange="2023 - current">
             Pursuing Licence (Bachelor) degree in software engineering at
@@ -48,7 +47,7 @@ const Home = () => {
         </ContentBox>
       </SectionWrapper>
       <SectionWrapper delay={0.6}>
-        <ContentBox title="Me Online:">
+        <ContentBox title="Me Online">
           <div className="flex flex-col flex-wrap sm:flex-nowrap justify-center gap-2 sm:gap-3 md:gap-4 font-bold">
             <MediaBox platform="Github" url="https://github.com/aliaitrhou">
               <p>aliaitrhou</p>
