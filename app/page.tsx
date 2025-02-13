@@ -16,7 +16,7 @@ const Home = () => {
           by the desire to create stuff that meet my needs and ambitions, I love
           everything related to product creating from identifying problems to
           designing and building software that not only makes me happy but also
-          motivates me to push forward and tackle the next. i have a plan to
+          motivates me to push forward and tackle the next and i have a plan to
           code until AI rips it from my speedy Vim fingers.
         </p>
       </SectionWrapper>
