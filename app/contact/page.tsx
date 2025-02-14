@@ -18,7 +18,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="w-full px-2 sm:px-8 md:px-10 mx-auto pt-4">
+    <div className="w-full px-2 sm:px-8 md:px-10 mx-auto pt-6">
       <section className="mx-auto flex flex-col items-center justify-center space-y-4 sm:space-y-6 w-[300px] xs:w-[400px] sm:w-[500px] md:w-[550px] px-0 xs:px-4 sm:px-10 md:px-12">
         {status.message && (
           <FormAlert

@@ -11,14 +11,16 @@ const Home = () => {
     <div className="w-full px-3 sm:px-6 md:px-10 mx-auto py-4 space-y-3 xs:space-y-4 sm:space-y-8">
       <SectionWrapper delay={0}>
         <ContentBox title="Who is Ali">
-          <p className="text-justify indent-8 font-light text-xl xs:text-2xl text-zinc-700 dark:text-zinc-300">
+          <p className="text-justify indent-8 font-light text-lg xs:text-xl text-zinc-700 dark:text-zinc-300">
             Yo! I&apos;m Ali. Not sure how to intro myself, but I&apos;m a CS
             student and aspiring software developer based in Morocco. Driven by
             the desire to create stuff that meets my needs and ambitions, I love
             everything related to product creation from identifying problems to
             designing and building software that not only makes me happy but
-            also motivates me to push forward and tackle the next challenge and
-            i plan to code until AI rips software from my speedy Vim fingers.
+            also motivates me to push forward and tackle the next challenge.
+            I’ve spent countless hours refining my craft, optimizing workflows,
+            and pushing my limits. And i plan to code until AI rips software
+            from my speedy Vim fingers.
           </p>
         </ContentBox>
       </SectionWrapper>
