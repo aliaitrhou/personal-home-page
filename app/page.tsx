@@ -12,7 +12,7 @@ const Home = () => {
       <SectionWrapper delay={0}>
         <ContentBox title="Who is Ali">
           <p className="text-justify indent-8 font-light text-lg xs:text-xl text-zinc-700 dark:text-zinc-300">
-            Yo! I&apos;m Ali. Not sure how to intro myself, but I&apos;m a CS
+            Hey! I&apos;m Ali. Not sure how to intro myself, but I&apos;m a CS
             student and aspiring software developer based in Morocco. Driven by
             the desire to create stuff that meets my needs and ambitions, I love
             everything related to product creation from identifying problems to
@@ -24,9 +24,9 @@ const Home = () => {
               Projects
             </Link>{" "}
             that not only makes me happy but also motivates me to push forward
-            and tackle the next challenge. I’ve spent countless hours refining
-            my craft, optimizing workflows, and pushing my limits. And i plan to
-            code until AI rips software from my speedy Vim fingers.
+            and tackle the next challenge. I spend countless hours refining my
+            craft, optimizing workflows and pushing my limits, So i plan to code
+            until AI rips software from my speedy Vim fingers.
           </p>
         </ContentBox>
       </SectionWrapper>
@@ -38,7 +38,7 @@ const Home = () => {
             Abdelmalek Essaadi University, Tetouan.
           </TimeLine>
           <TimeLine timeRange="2023 - 2024">
-            Worked as{" "}
+            Worked as a{" "}
             <Link
               href={{
                 pathname: "/certificates",
@@ -49,7 +49,8 @@ const Home = () => {
               Design officer
             </Link>
             {"  "}
-            with InfoMath team which is the computer science club in University.
+            with the InfoMath team, which is the Computer Science club at the
+            university.
           </TimeLine>
           <TimeLine timeRange="2024 - current">
             Head of organizing council at InfoMath club.
