@@ -25,8 +25,8 @@ const Home = () => {
             </Link>{" "}
             that not only makes me happy but also motivates me to push forward
             and tackle the next challenge. I spend countless hours refining my
-            craft, optimizing workflows and pushing my limits, So i plan to code
-            until AI rips software from my speedy Vim fingers.
+            craft, perfecting my workflow, and pushing my limits. And I plan to
+            code until AI rips software from my speedy Vim fingers.
           </p>
         </ContentBox>
       </SectionWrapper>

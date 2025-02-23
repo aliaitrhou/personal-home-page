@@ -3,7 +3,7 @@ import "./globals.css";
 import ClientLayout from "./clientLayout";
 
 export const metadata: Metadata = {
-  title: "Ali Aitrahou - Website",
+  title: "Ali Ait Rahou",
   description: "My personal home page",
 };
 
