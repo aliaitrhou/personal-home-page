@@ -8,14 +8,14 @@ import ml from "@/public/certificates/ml.png";
 export const certs = [
   {
     title: "Design Officer",
-    desc: "Certified Design Officer by Infomath, Helping the team gain an audience.",
+    desc: "Certified Design Officer by Infomath for a year of helping the team gain an audience.",
     src: infomath,
     id: "infomath",
     alt: "design officer certeficate",
   },
   {
     title: "AI Developer",
-    desc: "Certificate in AI Development/Integration, focusing on building applications powered by generative AI technologies.",
+    desc: "Certificate in AI Development, building applications powered by AI technologies.",
     src: ai,
     id: "ai-dev",
     alt: "ai dev certeficate",
@@ -32,18 +32,18 @@ export const certs = [
     desc: "Completed a Machine Learning workshop on supervised learning and neural networks.",
     src: ml,
     id: "web-design",
-    alt: "web design certeficate",
+    alt: "ML workshop certeficate",
   },
   {
     title: "Advanced React",
-    desc: "Advanced React certification, offering in-depth knowledge of React components, hooks, and performance optimization techniques.",
+    desc: "React certification focused on making faster apps with performance optimization techniques.",
     src: advancedReact,
     id: "advanced-react",
     alt: "advanced react certeficate",
   },
   {
     title: "Participation Certificate",
-    desc: "Certified for mentoring and assisting in student registration at the Faculty of Sciences, Tétouan, for one month.",
+    desc: "Mentoring and assisting in student registration at the Faculty of Sciences, Tétouan, for one month.",
     src: fs,
     id: "fs-tetouan",
     alt: "certificate of participation",
