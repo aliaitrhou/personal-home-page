@@ -1,18 +1,34 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { IoMenu } from "react-icons/io5";
 import LinkBox from "./linkbox";
 import { AnimatePresence, motion } from "framer-motion";
 
 const MobileMenu = ({ path }: { path: string }) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const menuRef = useRef<null | HTMLDivElement>(null);
+
+  // clicking outside of the menu should close it
+  useEffect(() => {
+    const handleClickElseWhere = (e: MouseEvent) => {
+      // here i check if the dom element that got clicked is contained by the menu
+      // if not close it.
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setOpenMenu(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickElseWhere);
+    return () => {
+      document.addEventListener("mousedown", handleClickElseWhere);
+    };
+  });
 
   const mobileMenuItemsStyles =
     "w-full hover:bg-gray-200 dark:hover:bg-zinc-600 px-4 py-1 text-start text-sm";
 
   return (
-    <div className="relative">
+    <div ref={menuRef} className="relative">
       <button
         className="p-2 border-[1px] rounded-full border-zinc-500 dark:border-zinc-500 focus:outline-none"
         aria-label="Options"
