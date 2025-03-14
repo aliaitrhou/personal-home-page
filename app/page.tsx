@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className="w-full px-3 sm:px-6 md:px-10 mx-auto py-4 space-y-6 sm:space-y-8">
       <SectionWrapper delay={0}>
-        <ContentBox title="Who is Ali">
+        <ContentBox title="Who Am I">
           <p className="text-justify indent-8 font-light text-lg xs:text-xl text-zinc-700 dark:text-zinc-300">
             Hey! I&apos;m Ali. Not sure how to intro myself, but I&apos;m a CS
             student and aspiring software developer based in Morocco. Driven by
