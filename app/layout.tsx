@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ClientLayout from "./clientLayout";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Ali Ait Rahou",
@@ -22,6 +23,7 @@ export default function RootLayout({
         >
           {children}
         </ClientLayout>
+        <Analytics />
       </body>
     </html>
   );
