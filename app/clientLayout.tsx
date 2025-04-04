@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useContext, useState } from "react";
+import { useRef, useEffect, useContext } from "react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { usePathname, useSelectedLayoutSegment } from "next/navigation";
@@ -14,7 +14,7 @@ import PageWrapper from "@/components/page-wrapper";
 // i found that the exit animation is not working as expected which was related to nextjs app router
 // after some time i found an article that helped me to solve this issue
 // you can find more about this here:
-// https://www.imcorfitz.com/posts/adding-framer-motion-page-transitions-to-next-js-app-router?utm_source=chatgpt.com
+// https://www.imcorfitz.com/posts/adding-framer-motion-page-transitions-to-next-js-app-router
 
 function usePreviousValue<T>(value: T): T | undefined {
   const prevValue = useRef<T | undefined>(undefined);
