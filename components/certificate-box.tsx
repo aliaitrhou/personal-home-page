@@ -8,26 +8,26 @@ import { createPortal } from "react-dom";
 
 interface CertificateProps {
   title: string;
-  desc: string;
+  children: React.ReactNode;
   alt: string;
   path: StaticImageData;
-  openCert: boolean;
+  openCert?: boolean;
   delay: number;
 }
 
 const CertificateBox: React.FC<CertificateProps> = ({
   title,
-  desc,
+  children,
   alt,
   path,
   delay,
   openCert = false,
 }) => {
-  const [expand, setExpand] = useState(openCert || false);
+  const [expand, setExpand] = useState(openCert);
   const [isClient, setIsClient] = useState(false);
   const searchParams = useSearchParams();
 
-  // i used this function to remove the cert query param from the url
+  // function to remove the cert query param from the url
   // cause it keeps the infomath certification open
   const removeQueryParams = () => {
     const params = new URLSearchParams(searchParams.toString());
@@ -49,7 +49,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
         <Image
           src={path}
           alt={alt}
-          className={`object-fill w-full aspect-[14/8] inner-custom rounded-md sm:cursor-pointer ${openCert ? "border-4 border-orange-500 dark:border-NeonLime-600" : ""} sm:border-2 sm:border-slate-400`}
+          className={`shadow-xl object-fill w-full aspect-[14/8] rounded-md sm:cursor-pointer ${openCert ? "border-2 border-orange-400 dark:border-NeonLime-600" : "hover:rounded-none"}`}
           onClick={() => {
             setExpand(true);
             removeQueryParams();
@@ -59,7 +59,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
           <h3 className="text-xl text-zinc-600  dark:text-zinc-300 font-bold">
             {title}
           </h3>
-          <p className="text-md text-zinc-500 font-normal">{desc}</p>
+          <p className="text-md text-zinc-500 font-normal">{children}</p>
         </div>
       </CertificateWrapper>
 
@@ -73,7 +73,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
             <Image
               src={path}
               alt={alt}
-              className="max-w-[80%] max-h-[85%] md:max-w-[60%] md:max-h-[65%] rounded-xl shadow-2xl  border-2 border-black dark:border-white"
+              className="w-[85%] md:w-[75%] xl:w-[60%] h-[40%] md:max-h-[65%] lg:h-[60%] rounded-xl shadow-2xl  border-2 border-black dark:border-white"
             />
           </div>,
           document.body,
