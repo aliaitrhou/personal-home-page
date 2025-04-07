@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from "react";
 import Image, { StaticImageData } from "next/image";
 import { useSearchParams } from "next/navigation";
-import CertificateWrapper from "./certificate-wrapper";
 import { createPortal } from "react-dom";
+import AnimationBox from "./animationBox";
 
 interface CertificateProps {
   title: string;
@@ -12,6 +12,7 @@ interface CertificateProps {
   alt: string;
   path: StaticImageData;
   openCert?: boolean;
+  date: string;
   delay: number;
 }
 
@@ -20,6 +21,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
   children,
   alt,
   path,
+  date,
   delay,
   openCert = false,
 }) => {
@@ -42,7 +44,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
 
   return (
     <>
-      <CertificateWrapper
+      <AnimationBox
         delay={delay}
         className="relative w-full overflow-hidden space-y-2"
       >
@@ -56,12 +58,17 @@ const CertificateBox: React.FC<CertificateProps> = ({
           }}
         />
         <div className="text-center">
-          <h3 className="text-xl text-zinc-600  dark:text-zinc-300 font-bold">
-            {title}
-          </h3>
+          <div className="flex items-center justify-between">
+            <h3 className="text-xl text-zinc-600  dark:text-zinc-300 font-bold">
+              {title}
+            </h3>
+            <span className="rounded-sm bg-amber-300/60 text-zinc-500 dark:bg-zinc-400/30 dark:text-zinc-300 px-2 text-xs">
+              {date}
+            </span>
+          </div>
           <p className="text-md text-zinc-500 font-normal">{children}</p>
         </div>
-      </CertificateWrapper>
+      </AnimationBox>
 
       {expand &&
         isClient &&
@@ -73,7 +80,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
             <Image
               src={path}
               alt={alt}
-              className="w-[85%] md:w-[75%] xl:w-[60%] h-[40%] md:max-h-[65%] lg:h-[60%] rounded-xl shadow-2xl  border-2 border-black dark:border-white"
+              className="w-[85%] md:w-[75%] xl:w-[60%] h-[40%] md:max-h-[65%] lg:h-[60%] shadow-2xl  border-2 border-black dark:border-white"
             />
           </div>,
           document.body,
