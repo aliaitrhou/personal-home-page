@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image, { StaticImageData } from "next/image";
 import { useSearchParams } from "next/navigation";
 import { createPortal } from "react-dom";
-import AnimationBox from "./animationBox";
+import AnimationBox from "./animation-box";
 
 interface CertificateProps {
   title: string;
