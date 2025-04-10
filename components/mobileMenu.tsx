@@ -97,6 +97,14 @@ const MobileMenu = ({ path }: { path: string }) => {
               >
                 Contact
               </LinkBox>
+              <LinkBox
+                url={"github"}
+                href="https://github.com/aliaitrhou/personal_home_page"
+                classNames={mobileMenuItemsStyles}
+                onClick={() => setOpenMenu(false)}
+              >
+                Source
+              </LinkBox>
             </ul>
           </motion.div>
         )}

@@ -13,7 +13,7 @@ const Navbar: React.FC<NavProps> = ({ url, classNames }) => {
   return (
     // TODO: change the bg leter:
     <nav
-      className={`fixed top-0 left-0 right-0 z-20 w-full bg-[#ffffff40] dark:bg-[#20202380] backdrop-blur-sm ${classNames}`}
+      className={`fixed top-0 left-0 right-0 z-40 w-full bg-[#ffffff40] dark:bg-[#20202380] backdrop-blur-sm ${classNames}`}
     >
       <div className="relative flex p-2 max-w-4xl flex-wrap mx-auto justify-between">
         <div className="flex items-center mr-5">
@@ -30,6 +30,12 @@ const Navbar: React.FC<NavProps> = ({ url, classNames }) => {
           </LinkBox>
           <LinkBox url={url} href="/contact">
             Contact
+          </LinkBox>
+          <LinkBox
+            url={"github"}
+            href="https://github.com/aliaitrhou/personal_home_page"
+          >
+            Source
           </LinkBox>
         </ul>
         <div className="flex-1 text-end self-center">

@@ -78,7 +78,7 @@ export default function ClientLayout({
       path: "/projects",
     },
     {
-      title: "To Journey Awards",
+      title: "To My Awards",
       path: "/certificates",
     },
     {
@@ -100,7 +100,12 @@ export default function ClientLayout({
           <ImSpinner9 className="animate-spin size-8 mx-auto my-[40dvh]" />
         }
       >
-        <PageWrapper classNames="relative" title={title} keyword={keyword}>
+        <PageWrapper
+          classNames="relative"
+          title={title}
+          keyword={keyword}
+          aboutPage={pathname === "/"}
+        >
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={segment}

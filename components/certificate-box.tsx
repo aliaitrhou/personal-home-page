@@ -59,7 +59,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
         />
         <div className="text-center">
           <div className="flex items-center justify-between">
-            <h3 className="text-xl text-zinc-600  dark:text-zinc-300 font-bold">
+            <h3 className="text-md sm:text-lg text-zinc-600  dark:text-zinc-300 font-bold">
               {title}
             </h3>
             <span className="rounded-sm bg-amber-300/60 text-zinc-500 dark:bg-zinc-400/30 dark:text-zinc-300 px-2 text-xs">
