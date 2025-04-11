@@ -8,12 +8,12 @@ export default {
   darkMode: "class",
   theme: {
     screens: {
-      xs: "480px", // Custom small breakpoint
-      sm: "640px", // Default sm breakpoint
-      md: "768px", // Default md breakpoint
-      lg: "1024px", // Default lg breakpoint
-      xl: "1280px", // Default xl breakpoint
-      "2xl": "1536px", // Default 2xl breakpoint
+      xs: "480px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
     },
     extend: {
       colors: {
@@ -30,8 +30,8 @@ export default {
         },
       },
       fontFamily: {
-        Playfair: ["Playfair Display", "serif"],
         Nunito: ["Nunito", "serif"],
+        Sora: ["Sora", "serif"],
       },
     },
   },

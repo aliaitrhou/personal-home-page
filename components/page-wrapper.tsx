@@ -32,7 +32,7 @@ const PageWrapper: React.FC<Props> = ({
           <div className="absolute z-30 -mt-20 inset-0 flex flex-col items-center justify-center text-center px-8">
             <PageTitle title={title} keyword={keyword} />
           </div>
-          <div className="absolute z-20 inset-0 bg-gradient-to-r dark:from-zinc-800 dark:via-zinc-800/30 dark:to-zinc-800 dark:to-95% from-amber-50 from-5% via-amber-100/40   to-amber-50 to-95%" />
+          <div className="absolute z-20 inset-0 bg-gradient-to-r dark:from-zinc-800 dark:via-zinc-800/30 dark:to-zinc-800 dark:to-95% from-amber-50 from-4% via-white/20   to-amber-50 to-98%" />
           <div className="absolute bottom-24 sm:bottom-28 right-6 sm:right-8 z-30 w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24  bg-orange-500 dark:bg-NeonLime-600  rounded-full p-[2.5px]">
             <Image
               src={Ali}
@@ -44,7 +44,7 @@ const PageWrapper: React.FC<Props> = ({
         <div className="absolute bottom-0  h-24 -z-10 w-full mx-auto bg-gradient-to-b from-amber-50/5 to-amber-50 dark:from-transparent dark:to-zinc-800 "></div>
       </div>
 
-      <div className="z-20 w-full sm:max-w-3xl mx-auto px-4 sm:px-8 md:px-10 pt-4 md:pt-8 -mt-36">
+      <div className="z-20 w-full sm:max-w-3xl mx-auto px-2 sm:px-8 md:px-10 pt-4 md:pt-8 -mt-36">
         {children}
       </div>
     </div>
