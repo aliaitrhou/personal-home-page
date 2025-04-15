@@ -1,13 +1,12 @@
 import React from "react";
 
-type Props = {
-  params: {
-    project: string;
-  };
-};
-
-const ProjectDetails = ({ params }: Props) => {
-  return <p> Project Name: {params.project}</p>;
+const ProjectDetails = async ({
+  params,
+}: {
+  params: Promise<{ p: string }>;
+}) => {
+  const { p } = await params;
+  return <p>Project Name: {p}</p>;
 };
 
 export default ProjectDetails;

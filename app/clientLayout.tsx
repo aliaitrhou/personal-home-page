@@ -100,12 +100,7 @@ export default function ClientLayout({
           <ImSpinner9 className="animate-spin size-8 mx-auto my-[40dvh]" />
         }
       >
-        <PageWrapper
-          classNames="relative"
-          title={title}
-          keyword={keyword}
-          aboutPage={pathname === "/"}
-        >
+        <PageWrapper classNames="relative" title={title} keyword={keyword}>
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={segment}
