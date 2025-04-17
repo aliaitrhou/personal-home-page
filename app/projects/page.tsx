@@ -13,7 +13,7 @@ const Projects = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-10 md:gap-14">
           <AnimationBox delay={0.1}>
             <ProjectBox
-              href="/projects/shell_agent"
+              href="/projects/shellagent"
               thumnail={shell_agent_thumnail}
               projectName="Shell Agent"
               date="2025"
@@ -24,7 +24,7 @@ const Projects = () => {
           </AnimationBox>
           <AnimationBox delay={0.2}>
             <ProjectBox
-              href="/projects/jarvis_ai"
+              href="/projects/jarvisai"
               thumnail={jarvis_thumnail}
               projectName="Jarvis AI"
               date="2024"
@@ -35,7 +35,7 @@ const Projects = () => {
           </AnimationBox>
           <AnimationBox delay={0.3}>
             <ProjectBox
-              href="/projects/youtube_trascriber"
+              href="/projects/youtube-trascriber"
               thumnail={youtube_trascriber_thumnail}
               projectName="Youtube Transcriber"
               date="2024"
