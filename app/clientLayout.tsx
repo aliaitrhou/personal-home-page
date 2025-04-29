@@ -86,6 +86,21 @@ export default function ClientLayout({
       keyword: "feel free To",
       path: "/contact",
     },
+    {
+      title: "With Shell Agent",
+      keyword: "Learn Linux & Terminal",
+      path: "/projects/shell-agent",
+    },
+    {
+      title: "With Jarvis AI",
+      keyword: "personal assistent",
+      path: "/projects/jarvis-ai",
+    },
+    {
+      title: "Youtube Transcriber",
+      keyword: "video translation",
+      path: "/projects/youtube-transcriber",
+    },
   ];
 
   const page = pagesStatus.find((s) => s.path === pathname);
