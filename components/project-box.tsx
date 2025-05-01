@@ -21,7 +21,7 @@ const ProjectBox: React.FC<Props> = ({
     <div className="w-full mx-auto px-2">
       <Link href={href} className="space-y-3">
         <Image
-          className={`object-fill w-full aspect-[14/8] rounded-t-lg border border-neutral-300 dark:border-neutral-700`}
+          className={`object-fill w-full aspect-[14/8] rounded-lg border border-neutral-300 dark:border-neutral-700`}
           src={thumnail}
           alt={projectName}
         />
