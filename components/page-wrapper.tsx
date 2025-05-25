@@ -18,7 +18,7 @@ const PageWrapper: React.FC<Props> = ({
 }) => {
   return (
     <div className={classNames}>
-      <div className="relative w-full">
+      <div className="relative w-full md:px-10">
         <div className="relative -z-10 w-full h-[300px] sm:h-[350px] -mt-2">
           <video
             autoPlay
@@ -33,7 +33,7 @@ const PageWrapper: React.FC<Props> = ({
             <PageTitle title={title} keyword={keyword} />
           </div>
           <div className="absolute z-20 inset-0 bg-gradient-to-r dark:from-zinc-800 dark:via-zinc-800/30 dark:to-zinc-800 dark:to-95% from-amber-50 from-4% via-white/20   to-amber-50 to-98%" />
-          <div className="absolute bottom-24 sm:bottom-28 right-6 sm:right-8 z-30 w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24  bg-orange-500 dark:bg-NeonLime-600  rounded-full p-[2.5px]">
+          <div className="absolute bottom-24 sm:bottom-28 right-6 sm:right-3 z-30 w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24  bg-orange-500 dark:bg-NeonLime-600  rounded-full p-[2.5px]">
             <Image
               src={Ali}
               alt="ali"
