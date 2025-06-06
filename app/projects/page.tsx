@@ -3,6 +3,7 @@ import ProjectBox from "@/components/project-box";
 import shell_agent_thumnail from "@/public/imgs/projects/shell_agent/shell_agent_thumnail.png";
 import jarvis_thumnail from "@/public/imgs/projects/jarvis_ai/jarvis-android-ios.png";
 import youtube_trascriber_thumnail from "@/public/imgs/projects/yt_transcriber/yt_tanscriber_thumnail.png";
+import exami_thumnail from "@/public/imgs/projects/exami/exami.png";
 import AnimationBox from "@/components/animation-box";
 import ContentBox from "@/components/content-box";
 
@@ -45,16 +46,22 @@ const Projects = () => {
             </ProjectBox>
           </AnimationBox>
         </div>
-        <div className=" text-orange-400 dark:text-NeonLime-400/80">
-          More project are preparing for reference...
+      </ContentBox>
+      <ContentBox title="Colaborations" styles="px-3 sm:px-5 sm:py-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-10 md:gap-14">
+          <AnimationBox delay={0.4}>
+            <ProjectBox
+              href="/projects/exami"
+              thumnail={exami_thumnail}
+              projectName="Exami"
+              date="2025"
+            >
+              Examination paltform for teachers to create online exams and for
+              students to pass them.
+            </ProjectBox>
+          </AnimationBox>
         </div>
       </ContentBox>
-      {/* TODO: add colaboration */}
-      {/* <ContentBox title="Colaborations" styles="px-3 sm:px-5 sm:py-4"> */}
-      {/*   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-10 md:gap-14"> */}
-      {/*        ....*/}
-      {/*   </div> */}
-      {/* </ContentBox> */}
     </section>
   );
 };
