@@ -15,19 +15,22 @@ const ShellAgent = () => {
     <div className="space-y-3">
       <AnimationBox delay={0}>
         <ContentBox title="Description">
-          <p className="text-justify indent-6 mb-3">
+          <p className="text-justify indent-6">
             A tool to transcribe any YouTube video into your language of choice.
             I built it while trying the nextjs app router, and openai python
-            library. The UI was originally developed with Stitches, a CSS-in-JS
-            library, but since Stitches is no longer actively maintained, I
-            rewrote the entire interface using Chakra UI, which is built on a
-            more stable and flexible styling system.
+            library.
           </p>
           <Image
             alt="youtube transcriber overview"
             src={yt_transcriber}
-            className="rounded-lg mb-6"
+            className="my-4 shadow-lg border border-gray-300"
           />
+          <p>
+            The UI was originally developed with Stitches, a CSS-in-JS library,
+            but Stitches is no longer actively maintained, I rewrote the
+            interface using Chakra UI, which is built on a more stable and
+            flexible styling system.
+          </p>
         </ContentBox>
       </AnimationBox>
       <AnimationBox delay={0.2}>
@@ -90,7 +93,7 @@ const ShellAgent = () => {
           <Image
             alt="youtube transcriber demo"
             src={demo}
-            className="my-8 rounded-md"
+            className="my-8 rounded-sm shadow-2xl"
           />
         </ContentBox>
       </AnimationBox>

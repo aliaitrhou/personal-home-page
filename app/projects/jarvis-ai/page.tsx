@@ -6,6 +6,8 @@ import AnimationBox from "@/components/animation-box";
 import Image from "next/image";
 import jarvis_android_ios from "@/public/imgs/projects/jarvis_ai/jarvis-android-ios.png";
 import jarvis_1 from "@/public/imgs/projects/jarvis_ai/jarvis_1_nobg.png";
+import jarvis_ios_settings from "@/public/imgs/projects/jarvis_ai/jarvis_3.png";
+import jarvis_android_settings from "@/public/imgs/projects/jarvis_ai/jarvis_4.png";
 import { FaNodeJs } from "react-icons/fa6";
 import { TbBrandReactNative } from "react-icons/tb";
 import { SiExpo, SiLangchain, SiOpenai } from "react-icons/si";
@@ -17,9 +19,10 @@ const ShellAgent = () => {
       <AnimationBox delay={0}>
         <ContentBox title="Description">
           <p className="text-justify indent-6 mb-3">
-            Personal assistent that learn from you, as you chat with it, with
-            chaty interface, built while learning about langchain framework, and
-            advanced RAG
+            Personal assistant designed to learn from you, featuring an AI agent
+            that evolves through interaction and improves personalization with
+            each conversation. Built while studying the LangChain framework and
+            advanced Retrieval-Augmented Generation (RAG) techniques.
           </p>
           <div className="flex flex-col justify-center sm:flex-row  sm:items-center gap-4 sm:gap-6 md:gap-8 px-2 sm:px-4">
             <Image
@@ -88,38 +91,26 @@ const ShellAgent = () => {
               Supabase.
             </ToolBox>
           </ProjectMetaData>
-          <ProjectMetaData title="Deployment">
-            Deployed to internet using Render.
-          </ProjectMetaData>
-          <ProjectMetaData title="Website">
-            <Link
-              href={"https://vidotrans.onrender.com"}
-              target="_blank"
-              className="hover:underline underline-offset-1 text-yellow-500 dark:text-emerald-400"
-            >
-              https://vidotrans.onrender.com
-            </Link>
-          </ProjectMetaData>
           <ProjectMetaData title="Source Code">
             <Link
               href={"https://github.com/aliaitrhou/youtube-transcriber"}
               target="_blank"
               className="hover:underline underline-offset-1 text-yellow-500 dark:text-emerald-400"
             >
-              https://github.com/aliaitrhou/youtube-transcriber
+              https://github.com/aliaitrhou/jarvis-ai
             </Link>
           </ProjectMetaData>
-          <div className="flex flex-col justify-center sm:flex-row sm:items-center gap-6">
+          <div className="flex flex-col justify-center sm:flex-row  sm:items-center gap-4 sm:gap-6 md:gap-8 px-2 sm:px-4 my-4">
             <Image
-              alt="shell agent landing"
-              src={jarvis_android_ios}
-              className="my-8 rounded-md h-96"
+              alt="shell agent terminal"
+              src={jarvis_android_settings}
+              className="rounded-lg mx-auto sm:h-[450px] sm:w-1/2"
             />
-            {/* <Image */}
-            {/*   alt="shell agent landing" */}
-            {/*   src={jarvis_2} */}
-            {/*   className="my-8 rounded-md h-70" */}
-            {/* /> */}
+            <Image
+              alt="shell agent terminal"
+              src={jarvis_ios_settings}
+              className="rounded-lg mx-auto sm:h-[450px] sm:w-1/2"
+            />
           </div>
         </ContentBox>
       </AnimationBox>

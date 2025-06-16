@@ -18,12 +18,10 @@ const ShellAgent = () => {
       <AnimationBox delay={0}>
         <ContentBox title="Description">
           <p className="text-justify indent-6">
-            I built this project while struggling to learn terminal commands in
-            class. A friend shared a `.txt` file with a list of commands and
-            their explanations. I thought — instead of memorizing them manually,
-            why not talk to the file like it&apos;s an assistant that can
-            explain itself? That idea sparked the creation of this AI-powered
-            app.
+            I built this app while struggling to learn terminal commands. A
+            friend shared a .txt file with command explanations. Instead of
+            memorizing it, I thought—why not turn it into an assistant that
+            explains itself? That question led to this AI-powered tool.
           </p>
           <Image alt="shell agent terminal" src={terminal} />
           <p className="text-justify">
