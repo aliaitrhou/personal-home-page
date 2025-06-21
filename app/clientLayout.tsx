@@ -123,7 +123,7 @@ export default function ClientLayout({
               animate={animate}
               exit={exit}
               style={style}
-              transition={{ duration: 0.4, type: "easeInOut" }}
+              transition={{ duration: 0.4, type: "tween", ease: "easeInOut" }}
               className={className}
             >
               <FrozenRouter>{children}</FrozenRouter>
