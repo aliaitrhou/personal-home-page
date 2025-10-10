@@ -89,15 +89,18 @@ const ShellAgent = () => {
           <ProjectMetaData title="Hosting">
             Deployed to internet using Digital Ocean.
           </ProjectMetaData>
-          <ProjectMetaData title="Website">
-            <Link
-              href={"https://shellagent.vercel.app/"}
-              target="_blank"
-              className="hover:underline underline-offset-1 text-yellow-500 dark:text-emerald-400"
-            >
-              https://shellagent.vercel.app
-            </Link>
-          </ProjectMetaData>
+          <div className="border border-yellow-500 pb-2 mb-2">
+            <div className="text-white bg-yellow-500 mb-2 w-fit text-xs px-2 ">Comming Soon:</div>
+            <ProjectMetaData title="Website">
+              <Link
+                href={"https://shellagent.dev/"}
+                target="_blank"
+                className="hover:underline underline-offset-1 text-yellow-500 dark:text-emerald-400"
+              >
+                https://shellagent.dev
+              </Link>
+            </ProjectMetaData>
+          </div>
           <ProjectMetaData title="Source Code">
             <Link
               href={"https://github.com/aliaitrhou/shell-agent"}
