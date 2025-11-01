@@ -17,12 +17,11 @@ const ShellAgent = () => {
     <div className="space-y-3">
       <AnimationBox delay={0}>
         <ContentBox title="Description">
-          <p className="text-justify indent-6">
-            I built this app while struggling to learn terminal commands. A
-            friend shared a .txt file with command explanations. Instead of
-            memorizing it, I thought—why not turn it into an assistant that
-            explains itself? That question led to this AI-powered tool.
-          </p>
+          <p className="text-justify">
+            I built this app during a time when I was struggling to remember terminal commands.
+            A friend once shared a simple .txt file full of command explanations — helpful, but static.
+            That got me thinking: what if instead of reading a file, I could talk to it?
+            That thought sparked the idea for this AI-powered assistant.          </p>
           <Image alt="shell agent terminal"
             className="my-2 rounded-lg border-4  border-zinc-700 dark:border-zinc-900"
             src={terminal} />
@@ -89,18 +88,15 @@ const ShellAgent = () => {
           <ProjectMetaData title="Hosting">
             Deployed to internet using Digital Ocean.
           </ProjectMetaData>
-          <div className="border border-yellow-500 pb-2 mb-2">
-            <div className="text-white bg-yellow-500 mb-2 w-fit text-xs px-2 ">Comming Soon:</div>
-            <ProjectMetaData title="Website">
-              <Link
-                href={"https://shellagent.dev/"}
-                target="_blank"
-                className="hover:underline underline-offset-1 text-yellow-500 dark:text-emerald-400"
-              >
-                https://shellagent.dev
-              </Link>
-            </ProjectMetaData>
-          </div>
+          <ProjectMetaData title="Website">
+            <Link
+              href={"https://shellagent.dev/"}
+              target="_blank"
+              className="hover:underline underline-offset-1 text-yellow-500 dark:text-emerald-400"
+            >
+              https://shellagent.dev
+            </Link>
+          </ProjectMetaData>
           <ProjectMetaData title="Source Code">
             <Link
               href={"https://github.com/aliaitrhou/shell-agent"}
