@@ -46,19 +46,19 @@ const CertificateBox: React.FC<CertificateProps> = ({
     <>
       <AnimationBox
         delay={delay}
-        className="relative w-full overflow-hidden space-y-2"
+        className="relative w-full overflow-hidden p-3 space-y-2 border border-neutral-300 dark:border-neutral-700 rounded-xl bg-yellow-100/30 dark:bg-zinc-700/30 backdrop-blur-md"
       >
         <Image
           src={path}
           alt={alt}
-          className={`shadow-xl object-fill w-full aspect-[14/8] rounded-md sm:cursor-pointer ${openCert ? "border-2 border-orange-400 dark:border-NeonLime-600" : "hover:rounded-none"}`}
+          className={`object-fill rounded-xl w-full aspect-[14/8] sm:cursor-pointer border border-neutral-300 dark:border-neutral-700 ${openCert ? "border-2 border-orange-400 dark:border-NeonLime-600" : ""}`}
           onClick={() => {
             setExpand(true);
             removeQueryParams();
           }}
         />
         <div className="text-center">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mb-2">
             <h3 className="text-md sm:text-lg text-zinc-600  dark:text-zinc-300 font-bold">
               {title}
             </h3>
@@ -66,7 +66,9 @@ const CertificateBox: React.FC<CertificateProps> = ({
               {date}
             </span>
           </div>
-          <p className="text-md text-zinc-500 font-normal">{children}</p>
+          <p className="text-sm text-zinc-500 font-normal text-center">
+            {children}
+          </p>
         </div>
       </AnimationBox>
 
