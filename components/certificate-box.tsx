@@ -66,7 +66,8 @@ const CertificateBox: React.FC<CertificateProps> = ({
               {date}
             </span>
           </div>
-          <p className="text-sm text-zinc-500 font-normal text-center">
+
+          <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
             {children}
           </p>
         </div>
