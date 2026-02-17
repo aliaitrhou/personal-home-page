@@ -1,7 +1,6 @@
 import { TbLoader2 } from "react-icons/tb";
 import { forwardRef, ReactNode } from "react";
 
-// Spinner
 export const OfficeSpinner = () => {
   return (
     <div className="absolute inset-0 flex items-center justify-center">
@@ -10,12 +9,10 @@ export const OfficeSpinner = () => {
   );
 };
 
-// Container Props
 interface OfficeContainerProps {
   children: ReactNode;
 }
 
-// Properly typed forwardRef
 export const OfficeContainer = forwardRef<HTMLDivElement, OfficeContainerProps>(
   ({ children }, ref) => {
     return (
@@ -31,7 +28,6 @@ export const OfficeContainer = forwardRef<HTMLDivElement, OfficeContainerProps>(
 
 OfficeContainer.displayName = "OfficeContainer";
 
-// Loader
 const Loader = () => {
   return (
     <OfficeContainer>
