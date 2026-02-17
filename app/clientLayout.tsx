@@ -70,7 +70,7 @@ export default function ClientLayout({
 
   const pagesStatus = [
     {
-      title: "To My Website",
+      title: "To My Office",
       path: "/",
     },
     {
@@ -104,8 +104,8 @@ export default function ClientLayout({
   ];
 
   const page = pagesStatus.find((s) => s.path === pathname);
-  const title = page ? page.title : "";
-  const keyword = page ? page?.keyword : "";
+  const title = page ? page.title : "Page Not Found";
+  const keyword = page ? page?.keyword : "404";
 
   return (
     <main>
@@ -115,7 +115,7 @@ export default function ClientLayout({
           <ImSpinner9 className="animate-spin size-8 mx-auto my-[40dvh]" />
         }
       >
-        <PageWrapper classNames="relative" title={title} keyword={keyword}>
+        <PageWrapper classNames="" title={title} keyword={keyword}>
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={segment}

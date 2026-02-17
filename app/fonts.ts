@@ -1,8 +1,6 @@
 import {
   M_PLUS_Rounded_1c,
   Lexend,
-  Fira_Code,
-  Montserrat,
   Saira,
 } from "next/font/google";
 

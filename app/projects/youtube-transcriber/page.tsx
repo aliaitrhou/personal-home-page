@@ -23,7 +23,7 @@ const ShellAgent = () => {
           <Image
             alt="youtube transcriber overview"
             src={yt_transcriber}
-            className="my-4 shadow-lg border border-gray-300"
+            className="my-4 border border-gray-300"
           />
           <p>
             The UI was originally developed with Stitches, a CSS-in-JS library,
@@ -34,7 +34,7 @@ const ShellAgent = () => {
         </ContentBox>
       </AnimationBox>
       <AnimationBox delay={0.2}>
-        <ContentBox title="Project Info" styles="px-2 sm:px-4">
+        <ContentBox title="Project Info" styles="">
           <ProjectMetaData title="Platform">Web Application.</ProjectMetaData>
           <ProjectMetaData
             title="Tech Stack"
@@ -93,7 +93,7 @@ const ShellAgent = () => {
           <Image
             alt="youtube transcriber demo"
             src={demo}
-            className="my-8 rounded-sm shadow-2xl"
+            className="my-8 rounded-sm"
           />
         </ContentBox>
       </AnimationBox>
