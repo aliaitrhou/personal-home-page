@@ -32,8 +32,8 @@ import { TbBrandReactNative } from "react-icons/tb";
 const Projects = () => {
   return (
     <section className="py-3 sm:py-2 md:py-0 space-y-4 sm:space-y-6 md:space-y-8">
-      <ContentBox title="Open Source" styles="px-0">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-10 md:gap-14">
+      <ContentBox title="Open Source" styles="sm:py-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 md:gap-10">
           <AnimationBox delay={0.1}>
             <ProjectBox
               href="/projects/shell-agent"
@@ -189,8 +189,8 @@ const Projects = () => {
           </AnimationBox>
         </div>
       </ContentBox>
-      <div className="border-t border-zinc-700" />
-      <ContentBox title="Colaborations" styles="px-3 sm:px-5 sm:py-4">
+      <div className="border-t border-zinc-700/10" />
+      <ContentBox title="Colaborations" styles="">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-10 md:gap-14">
           <AnimationBox delay={0.4}>
             <ProjectBox
