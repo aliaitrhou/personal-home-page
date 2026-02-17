@@ -1,11 +1,14 @@
+import { lexend } from "@/app/fonts";
 import Link from "next/link";
 
 const Logo = () => {
   return (
     <Link href={"/"}>
-      <p className="font-Nunito text-gray-800  dark:text-gray-300 font-bold text-lg">
+      <h1
+        className={`${lexend.className} text-gray-800  dark:text-gray-300 font-semibold text-lg`}
+      >
         Ali Ait Rahou
-      </p>
+      </h1>
     </Link>
   );
 };

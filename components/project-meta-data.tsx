@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
+import { lexend } from "@/app/fonts";
+import React from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 interface ToolBoxProps {
@@ -9,57 +10,29 @@ interface ToolBoxProps {
   href: string;
   icon?: React.ReactNode;
   title?: string;
+  isLast?: boolean;
 }
 
 export const ToolBox: React.FC<ToolBoxProps> = ({
   color,
-  children,
   href = "#",
   icon,
   title,
+  isLast = false,
 }) => {
-  const [isMouseOver, setIsMouseOver] = React.useState(false);
-
-  const theme = `text-${color}-500 hover:text-${color}-600 hover:dark:text-${color}-400`;
+  const theme = `text-${color}-500 hover:text-${color}-600 hover:dark:text-${color}-400  bg-white dark:bg-gray-200/15 border border-amber-200 dark:border-zinc-600 text-xs`;
 
   return (
-    <div className="relative inline-block">
+    <div className="relative inline-block self-start">
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${theme} w-fit rounded-full text-xs font-sans flex items-center gap-1 transition-colors duration-200`}
-        onMouseEnter={() => setIsMouseOver(true)}
-        onMouseLeave={() => setIsMouseOver(false)}
+        className={`w-fit rounded-md ${lexend.className} text-[9px] font-light flex items-center gap-1 transition-colors duration-200 px-2 py-0.2 rounded-lg  ${isLast ? "text-white dark:text-black dark:bg-white bg-black/70 py-0.5" : theme}`}
       >
         {icon}
-        {children && children}
+        {title}
       </a>
-
-      {title && isMouseOver && (
-        <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1.5 px-3 py-1.5 bg-neutral-900 dark:bg-neutral-700 text-white text-xs rounded-lg whitespace-nowrap pointer-events-none animate-fadeIn shadow-lg">
-          {title}
-          <div className="absolute top-full left-1/2 transform -translate-x-1/2 -mt-px">
-            <div className="border-4 border-transparent border-t-neutral-900 dark:border-t-neutral-700"></div>
-          </div>
-        </div>
-      )}
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translate(-50%, 4px);
-          }
-          to {
-            opacity: 1;
-            transform: translate(-50%, 0);
-          }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.2s ease-out;
-        }
-      `}</style>
     </div>
   );
 };
