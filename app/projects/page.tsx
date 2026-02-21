@@ -1,4 +1,3 @@
-import React from "react";
 import ProjectBox from "@/components/project-box";
 import shell_agent_thumnail from "@/public/imgs/projects/shell_agent/shell_agent_thumnail.png";
 import jarvis_thumnail from "@/public/imgs/projects/jarvis_ai/jarvis-android-ios.png";
@@ -33,7 +32,7 @@ const Projects = () => {
   return (
     <section className="py-3 sm:py-2 md:py-0 space-y-4 sm:space-y-6 md:space-y-8">
       <ContentBox title="Open Source" styles="sm:py-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 md:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 md:gap-10 items-stretch">
           <AnimationBox delay={0.1}>
             <ProjectBox
               href="/projects/shell-agent"

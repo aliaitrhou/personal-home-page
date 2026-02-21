@@ -1,4 +1,5 @@
 import React from "react";
+import {lexend} from '@/app/fonts'
 
 interface Props {
   title: string;
@@ -15,7 +16,7 @@ const ContentBox: React.FC<Props> = ({
 }) => {
   return (
     <div>
-      <h2 className="flex items-center gap-2 uppercase leading-4 text-xs xs:text-sm sm:text-md font-bold mb-4 text-black dark:text-white w-fit">
+      <h2 className={`flex items-center gap-2 uppercase leading-4 text-xs xs:text-sm sm:text-md font-bold mb-4 text-black dark:text-white w-fit ${lexend.className}`}>
         {icon}
         <span>{title}</span>
       </h2>

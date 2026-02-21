@@ -23,26 +23,26 @@ const ProjectBox: React.FC<Props> = ({
   techStack,
 }) => {
   return (
-    <div className="group w-full mx-auto rounded-lg border border-neutral-200 bg-white dark:bg-zinc-800 dark:border-zinc-700  transition-all duration-300 overflow-hidden">
+    <div className="group w-full h-full mx-auto rounded-lg border border-neutral-200 bg-white dark:bg-zinc-800 dark:border-zinc-700  transition-all duration-300 overflow-hidden flex flex-col">
       <Link href={href}>
         <Image
-          className={`object-fill w-full aspect-[14/8] rounded-t-lg`}
+          className={`object-fill w-full aspect-[14/8] rounded-t-lg group-hover:scale-[1.03] transition-all duration-400 ease-in-out`}
           src={thumnail}
           alt={projectName}
         />
       </Link>
 
-      <div className="pt-2 space-y-3 p-3">
+      <div className="pt-2 space-y-3 p-3 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-2">
-          <h3 className="text-sm text-transparent bg-clip-text bg-gradient-to-r dark:from-NeonLime-600 dark:to-emerald-200 from-red-500 via-red-400 to-orange-400">
+          <h3 className={`text-sm text-transparent bg-clip-text bg-gradient-to-r dark:from-NeonLime-600 dark:to-emerald-200 from-red-500 via-red-400 to-orange-400 ${lexend.className}`}>
             {projectName}
           </h3>
-          <span className="shrink-0 px-2 py-0.5 text-xs font-medium text-white dark:text-zinc-400 bg-zinc-800/80 rounded-md">
+          <span className="shrink-0 px-2 py-0.5 text-[14px] font-medium dark:text-zinc-100 text-zinc-600 rounded-md font-mplus">
             {date}
           </span>
         </div>
 
-        <p className={`text-sm leading-relaxed text-zinc-600 dark:text-zinc-400/80 ${saira.className}`}>
+        <p className={`text-sm leading-relaxed text-zinc-600 dark:text-zinc-400/80 flex-1 ${saira.className}`}>
           {children}
         </p>
 
