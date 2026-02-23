@@ -11,6 +11,7 @@ import React, {
 import axios from "axios";
 import RequiredBox from "./required-warn-box";
 import { ImSpinner9 } from "react-icons/im";
+import { saira } from '@/app/fonts';
 
 interface Props {
   getStatus: (message: string, error: boolean) => void;
@@ -135,7 +136,7 @@ const Form: React.FC<Props> = ({ getStatus }) => {
 
   return (
     <form
-      className="max-w-md sm:max-w-lg flex flex-col gap-2 md:gap-3 w-full"
+      className={`max-w-md sm:max-w-lg flex flex-col gap-2 md:gap-3 w-full ${saira.className}`}
       noValidate
       onSubmit={(e) => handleSubmit(e)}
     >
