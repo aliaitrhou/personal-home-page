@@ -70,7 +70,7 @@ const Certificates = () => {
       </CertificateBox>
 
       <CertificateBox
-        title="Participation Certificate"
+        title="Mentorship"
         alt="certificate of participation"
         path={fs}
         delay={0.6}
