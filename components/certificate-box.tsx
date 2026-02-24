@@ -5,6 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import { useSearchParams } from "next/navigation";
 import { createPortal } from "react-dom";
 import AnimationBox from "./animation-box";
+import { lexend, saira } from '@/app/fonts';
 
 interface CertificateProps {
   title: string;
@@ -46,20 +47,20 @@ const CertificateBox: React.FC<CertificateProps> = ({
     <>
       <AnimationBox
         delay={delay}
-        className="relative w-full overflow-hidden space-y-2 border border-neutral-200 dark:border-neutral-700 rounded-xl bg-white dark:bg-zinc-700/30 backdrop-blur-md p-1"
+        className="relative w-full overflow-hidden space-y-2 border border-neutral-200 dark:border-neutral-700 rounded-t-lg rounded-b-xl bg-white dark:bg-neutral-700/60 backdrop-blur-md"
       >
         <Image
           src={path}
           alt={alt}
-          className={`object-fill rounded-t-xl w-full aspect-[14/8] sm:cursor-pointer  ${openCert ? "border-2 border-orange-400 dark:border-NeonLime-600" : " scale-120"}`}
+          className={`object-fill rounded-t-lg w-full aspect-[14/8] sm:cursor-pointer  ${openCert ? "border-2 border-orange-400 dark:border-NeonLime-600" : "hover:scale-[2px]"}`}
           onClick={() => {
             setExpand(true);
             removeQueryParams();
           }}
         />
         <div className="text-center px-3 pb-3 space-y-3">
-          <div className="flex items-center justify-between">
-            <h3 className="text-md sm:text-lg text-zinc-600  dark:text-zinc-300 font-bold">
+          <div className={`flex items-center justify-between  ${lexend.className}`}>
+            <h3 className="text-md sm:text-lg text-zinc-600  dark:text-zinc-300 font-semiBold">
               {title}
             </h3>
             <span className="rounded-sm bg-amber-300/60 text-zinc-500 dark:bg-zinc-400/30 dark:text-zinc-300 px-2 text-xs">
@@ -67,7 +68,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
             </span>
           </div>
 
-          <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+          <p className={`text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 ${saira.className} text-justify`}>
             {children}
           </p>
         </div>
