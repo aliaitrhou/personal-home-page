@@ -23,7 +23,7 @@ const ProjectBox: React.FC<Props> = ({
   techStack,
 }) => {
   return (
-    <div className="group w-full h-full mx-auto rounded-lg border border-neutral-200 bg-white dark:bg-zinc-800 dark:border-zinc-700  transition-all duration-300 overflow-hidden flex flex-col">
+    <div className="group w-full h-full mx-auto rounded-lg border border-neutral-200 bg-white dark:bg-neutral-700/60 dark:border-zinc-600/60  transition-all duration-300 overflow-hidden flex flex-col">
       <Link href={href}>
         <Image
           className={`object-fill w-full aspect-[14/8] rounded-t-lg group-hover:scale-[1.03] transition-all duration-400 ease-in-out`}

@@ -27,11 +27,13 @@ import {
 import { DiRedis } from "react-icons/di";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { TbBrandReactNative } from "react-icons/tb";
+import { RiOpenSourceFill } from "react-icons/ri";
+import { HiMiniUserGroup } from "react-icons/hi2";
 
 const Projects = () => {
   return (
     <section className="py-3 sm:py-2 md:py-0 space-y-4 sm:space-y-6 md:space-y-8">
-      <ContentBox title="Open Source" styles="sm:py-4">
+      <ContentBox title="Open Source" styles="sm:py-4" icon={<RiOpenSourceFill className="text-orange-400 dark:text-NeonLime-500"/>}>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 md:gap-10 items-stretch">
           <AnimationBox delay={0.1}>
             <ProjectBox
@@ -188,9 +190,9 @@ const Projects = () => {
           </AnimationBox>
         </div>
       </ContentBox>
-      <div className="border-t border-zinc-700/10" />
-      <ContentBox title="Colaborations" styles="">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-10 md:gap-14">
+      <div className="border-t border-zinc-700/10 dark:border-zinc-400/10" />
+      <ContentBox title="Colaborations" styles=""  icon={<HiMiniUserGroup className="text-orange-400 dark:text-NeonLime-500 size-4 mb-[1px]"/>}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 md:gap-10 items-stretch">
           <AnimationBox delay={0.4}>
             <ProjectBox
               href="/projects/exami"

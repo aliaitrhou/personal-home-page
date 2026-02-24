@@ -11,17 +11,19 @@ import { FaDocker, FaNodeJs } from "react-icons/fa";
 import { RiDatabase2Fill, RiNextjsFill } from "react-icons/ri";
 import { SiClerk, SiPrisma } from "react-icons/si";
 import { DiRedis } from "react-icons/di";
+import {saira } from '@/app/fonts'
 
 const ShellAgent = () => {
   return (
-    <div className="space-y-3">
+    <div className="space-y-6 md:space-y-8">
       <AnimationBox delay={0}>
-        <ContentBox title="Description">
-          <p className="text-justify">
+        <ContentBox title="Description" styles={`${saira.className} font-light leading-7`}>
+          <p className="text-justify indent-6">
             I built this app during a time when I was struggling to remember terminal commands.
-            A friend once shared a simple .txt file full of command explanations — helpful, but static.
-            That got me thinking: what if instead of reading a file, I could talk to it?
-            That thought sparked the idea for this AI-powered assistant.          </p>
+            A friend once shared a simple .txt file full of command explanations which is helpful but static.
+            That got me thinking:
+            what if instead of reading a file, I could talk to it? That thought sparked the idea for this AI-powered assistant. 
+          </p>
           <Image alt="shell agent terminal"
             className="my-2 rounded-lg border-4  border-zinc-700 dark:border-zinc-900"
             src={terminal} />
@@ -33,7 +35,7 @@ const ShellAgent = () => {
         </ContentBox>
       </AnimationBox>
       <AnimationBox delay={0.2}>
-        <ContentBox title="Project Info" styles="px-2 sm:px-4">
+        <ContentBox title="Project Info" styles="">
           <ProjectMetaData title="Platform">Web Application.</ProjectMetaData>
           <ProjectMetaData
             title="Tech Stack"
@@ -43,47 +45,41 @@ const ShellAgent = () => {
               color="green"
               icon={<FaNodeJs className="size-3" />}
               href="https://nodejs.org"
-            >
-              NodeJs,
-            </ToolBox>
+              title="NodeJs,"
+            />
             <ToolBox
               color="blue"
               icon={<RiNextjsFill className="size-3" />}
               href="https://nextjs.org/"
-            >
-              NextJs,
-            </ToolBox>
-            <ToolBox color="white" icon={<SiClerk />} href="https://clerk.com">
-              Clerk,
-            </ToolBox>
+              title="NextJs,"
+            />
+            <ToolBox color="white" icon={<SiClerk />} href="https://clerk.com"
+            title="Clerk,"
+            />
             <ToolBox
               color="yellow"
               icon={<SiPrisma className="size-3" />}
               href="https://www.prisma.io/"
-            >
-              PrismaORM,
-            </ToolBox>
+              title="PrismaORM,"
+            />
             <ToolBox
               color="blue"
               icon={<FaDocker className="size-4" />}
               href="https://docker.com"
-            >
-              Docker,
-            </ToolBox>
+              title="Docker,"
+            />
             <ToolBox
               color="red"
               icon={<DiRedis className="size-4" />}
               href="https://redis.io"
-            >
-              Redis,
-            </ToolBox>
+              title="Redis,"
+            />
             <ToolBox
               color="orange"
               icon={<RiDatabase2Fill className="size-3" />}
               href="https://neon.tech"
-            >
-              NeonDB.
-            </ToolBox>
+              title="NeonDB."
+            />
           </ProjectMetaData>
           <ProjectMetaData title="Hosting">
             Deployed to internet using Digital Ocean.

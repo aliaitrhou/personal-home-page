@@ -1,6 +1,6 @@
 "use client";
 
-import { lexend } from "@/app/fonts";
+import { lexend, saira } from "@/app/fonts";
 import React from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
@@ -20,7 +20,7 @@ export const ToolBox: React.FC<ToolBoxProps> = ({
   title,
   isLast = false,
 }) => {
-  const theme = `text-${color}-500 hover:text-${color}-600 hover:dark:text-${color}-400  bg-white dark:bg-gray-200/15 border border-amber-200 dark:border-zinc-600 text-xs`;
+  const theme = `text-${color}-500 hover:text-${color}-600 hover:dark:text-${color}-400  bg-white dark:bg-gray-200/15 border border-amber-200 dark:border-zinc-500/50 text-xs`;
 
   return (
     <div className="relative inline-block self-start">
@@ -50,13 +50,13 @@ const ProjectMetaData: React.FC<ProjectMetaDataProps> = ({
 }) => {
   return (
     <div
-      className={`text-sm font-Sora mb-2 ${styles ? "flex flex-row items-start gap-2" : "space-x-2"}`}
+      className={`text-sm mb-2 ${styles ? "flex flex-row items-start gap-2" : "space-x-2"}`}
     >
-      <div className="inline whitespace-nowrap break-keep text-blue-400 bg-blue-400/40 dark:text-white dark:bg-white/20 w-fit px-2 rounded-sm">
+      <div className={`inline whitespace-nowrap break-keep text-blue-400 bg-blue-400/40 dark:text-white dark:bg-white/20 w-fit px-2 rounded-md ${lexend.className}`}>
         <span>{title}</span>
       </div>
       <IoIosArrowRoundForward className="inline size-4 md:size-5 text-blue-400 dark:text-white" />
-      <p className={`inline font-light mt-2 ${styles}`}>{children}</p>
+      <p className={`inline font-light mt-2 ${styles} ${saira.className}`}>{children}</p>
     </div>
   );
 };
