@@ -6,7 +6,6 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 
 interface ToolBoxProps {
   color: string;
-  children?: React.ReactNode;
   href: string;
   icon?: React.ReactNode;
   title?: string;

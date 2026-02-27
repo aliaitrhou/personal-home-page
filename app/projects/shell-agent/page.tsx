@@ -35,7 +35,7 @@ const ShellAgent = () => {
         </ContentBox>
       </AnimationBox>
       <AnimationBox delay={0.2}>
-        <ContentBox title="Project Info" styles="">
+        <ContentBox title="Project Info">
           <ProjectMetaData title="Platform">Web Application.</ProjectMetaData>
           <ProjectMetaData
             title="Tech Stack"

@@ -1,4 +1,3 @@
-import React from "react";
 import ContentBox from "@/components/content-box";
 import Link from "next/link";
 import ProjectMetaData, { ToolBox } from "@/components/project-meta-data";
@@ -12,12 +11,13 @@ import { SiExpress } from "react-icons/si";
 import { RiJavascriptFill } from "react-icons/ri";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { BiLogoPostgresql } from "react-icons/bi";
+import { saira } from '@/app/fonts'
 
-const ShellAgent = () => {
+const Exami = () => {
   return (
     <div className="space-y-3">
       <AnimationBox delay={0}>
-        <ContentBox title="Description">
+        <ContentBox title="Description" styles={`${saira.className} font-light leading-7`}>
           <p className="text-justify indent-6">
             Collaborated with two teammates to design, build, scale, and secure
             an online examination platform using only vanilla JavaScript, as
@@ -36,7 +36,8 @@ const ShellAgent = () => {
         </ContentBox>
       </AnimationBox>
       <AnimationBox delay={0.2}>
-        <ContentBox title="Project Info" styles="px-2 sm:px-4">
+        <ContentBox title="Project Info"
+       >
           <ProjectMetaData title="Platform">Web.</ProjectMetaData>
           <ProjectMetaData
             title="Tech Stack"
@@ -46,39 +47,34 @@ const ShellAgent = () => {
               color="yellow"
               icon={<RiJavascriptFill className="size-4" />}
               href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-            >
-              javascript,
-            </ToolBox>
+              title="javascript,"
+            />
             <ToolBox
               color="blue"
               icon={<RiTailwindCssFill className="size-3" />}
               href="https://tailwindcss.com/"
-            >
-              Tailwindcss
-            </ToolBox>
+              title="Tailwindcss"
+            />
             <ToolBox
               color="black"
               icon={
                 <SiExpress className="size-4 border border-black rounded-md" />
               }
               href="https://expressjs.com/"
-            >
-              ExpressJS
-            </ToolBox>
+              title="ExpressJS"
+            />
             <ToolBox
               color="blue"
               icon={<BiLogoPostgresql className="size-4" />}
               href="https://postgresql.org/"
-            >
-              Postgresql,
-            </ToolBox>
+              title="Postgresql,"
+            />
             <ToolBox
               color="orange"
               icon={<FaKey className="size-3" />}
               href="https://jwt.io/"
-            >
-              JWT.
-            </ToolBox>
+              title="JWT."
+            />
           </ProjectMetaData>
           <ProjectMetaData title="Deployment">Not Deployed.</ProjectMetaData>
           <ProjectMetaData title="Website">Not-hosted for now.</ProjectMetaData>
@@ -107,4 +103,4 @@ const ShellAgent = () => {
   );
 };
 
-export default ShellAgent;
+export default Exami;

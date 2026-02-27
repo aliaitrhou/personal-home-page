@@ -9,12 +9,13 @@ import demo from "@/public/imgs/projects/yt_transcriber/demo.gif";
 import { FaNodeJs } from "react-icons/fa6";
 import { RiNextjsFill } from "react-icons/ri";
 import { SiChakraui, SiOpenai } from "react-icons/si";
+import { saira } from '@/app/fonts';
 
 const ShellAgent = () => {
   return (
     <div className="space-y-3">
       <AnimationBox delay={0}>
-        <ContentBox title="Description">
+        <ContentBox title="Description" styles={`${saira.className} font-light leading-7`} >
           <p className="text-justify indent-6">
             A tool to transcribe any YouTube video into your language of choice.
             I built it while trying the nextjs app router, and openai python
@@ -44,30 +45,26 @@ const ShellAgent = () => {
               color="green"
               icon={<FaNodeJs className="size-3" />}
               href="https://nodejs.org"
-            >
-              NodeJs,
-            </ToolBox>
+              title="NodeJs,"
+            />
             <ToolBox
               color="blue"
               icon={<RiNextjsFill className="size-3" />}
               href="https://nextjs.org/"
-            >
-              NextJs,
-            </ToolBox>
+              title="NextJs,"
+            />
             <ToolBox
               color="yellow"
               icon={<SiOpenai className="size-3" />}
               href="https://github.com/openai/openai-python"
-            >
-              OpenAI-Python,
-            </ToolBox>
+              title="OpenAI-Python,"
+            />
             <ToolBox
               color="orange"
               icon={<SiChakraui />}
               href="https://chakra-ui.com/"
-            >
-              ChakraUI.
-            </ToolBox>
+              title="ChakraUI."
+            />
           </ProjectMetaData>
           <ProjectMetaData title="Deployment">
             Deployed to internet using Render.
