@@ -101,6 +101,11 @@ export default function ClientLayout({
       keyword: "video translation",
       path: "/projects/youtube-transcriber",
     },
+    {
+      title: "Examination Platform",
+      keyword: "Education",
+      path: "/projects/exami",
+    },
   ];
 
   const page = pagesStatus.find((s) => s.path === pathname);
