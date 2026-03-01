@@ -18,7 +18,7 @@ export const OfficeContainer = forwardRef<HTMLDivElement, OfficeContainerProps>(
     return (
       <div
         ref={ref}
-        className="voxel-dog m-auto w-[380px] h-[230px] relative"
+        className="voxel-dog m-auto w-[380px] h-[250px] relative"
       >
         {children}
       </div>
