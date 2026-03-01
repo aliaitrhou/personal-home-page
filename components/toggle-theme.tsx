@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { FiSun } from "react-icons/fi";
 import { FiMoon } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
@@ -66,7 +66,7 @@ const ToggleTheme = () => {
               <FiSun color="black" />
             )}
           </motion.div>
-          <div className="absolute -z-10 top-0 right-[23.5px] hidden sm:inline-block w-1 h-[50%]  bg-orange-500 group-hover:bg-orange-600 dark:bg-NeonLime-500 dark:group-hover:bg-NeonLime-600" />
+          <div className="absolute -z-10 top-0 right-[52px] hidden sm:inline-block w-1 h-[50%]  bg-orange-500 group-hover:bg-orange-600 dark:bg-NeonLime-500 dark:group-hover:bg-NeonLime-600" />
         </button>
       </AnimatePresence>
     )

@@ -29,7 +29,7 @@ const Navbar: React.FC<NavProps> = ({ url, classNames }) => {
     <nav
       className={`fixed top-0 left-0 right-0 z-40 w-full bg-[#ffffff40] dark:bg-[#20202380] backdrop-blur-sm ${classNames} ${saira.className}`}
     >
-      <div className="relative flex p-2 max-w-2xl flex-wrap mx-auto justify-between">
+      <div className="relative flex max-w-2xl flex-wrap mx-auto justify-between px-2 md:px-9">
         <div className="flex items-center mr-5">
             <Logo />
         </div>
