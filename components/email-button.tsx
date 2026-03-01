@@ -8,6 +8,7 @@ import Image from "next/image";
 import { IoMdMail } from "react-icons/io";
 import { FaChevronRight } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
+import { lexend } from '@/app/fonts'
 
 const EmailButton = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -92,7 +93,7 @@ const EmailButton = () => {
         onMouseMove={handleMouseMove}
       >
         <IoMdMail className="size-4 sm:size-5" />
-        <p>Send Email</p>
+        <p className={`${lexend.className}`}>Send Email</p>
         <FaChevronRight className="size-3 transition-transform duration-300 group-hover:translate-x-1" />
       </Link>
     </div>
