@@ -7,7 +7,6 @@ interface Props {
   styles?: string;
   icon?: React.ReactNode;
 }
-// <CgGitPull />
 const ContentBox: React.FC<Props> = ({
   title,
   children,
@@ -15,8 +14,8 @@ const ContentBox: React.FC<Props> = ({
   icon,
 }) => {
   return (
-    <div>
-      <h2 className={`flex items-center gap-2 uppercase leading-4 text-xs xs:text-sm sm:text-md font-bold mb-4 text-black dark:text-white w-fit ${lexend.className}`}>
+    <div className="px-2 sm:px-8 md:px-10">
+      <h2 className={`flex items-center gap-2 uppercase leading-4 text-xs xs:text-sm sm:text-md font-bold text-black dark:text-white w-fit ${lexend.className} mb-4`}>
         {icon}
         <span>{title}</span>
       </h2>
