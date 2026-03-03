@@ -27,7 +27,7 @@ const PageWrapper: React.FC<Props> = ({
       <div className="">
         <LazyVoxelOffice />
       </div>
-      <div className="z-20 w-full sm:max-w-2xl mx-auto px-2 sm:px-8 md:px-10 pt-4 md:pt-8 mb-8 -mt-14">
+      <div className="z-20 w-full sm:max-w-2xl mx-auto md:pt-8 mb-8 -mt-14">
         <PageTitle title={title} keyword={keyword} />
         {children}
       </div>
