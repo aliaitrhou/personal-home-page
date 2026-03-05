@@ -47,7 +47,7 @@ const CertificateBox: React.FC<CertificateProps> = ({
     <>
       <AnimationBox
         delay={delay}
-        className="relative w-full overflow-hidden space-y-2 border border-neutral-200 dark:border-neutral-700 rounded-t-lg rounded-b-xl bg-white dark:bg-neutral-700/60 backdrop-blur-md"
+        className="relative w-full overflow-hidden space-y-2 border border-neutral-200 dark:border-neutral-600/50 rounded-t-lg rounded-b-xl bg-white dark:bg-neutral-700/60 backdrop-blur-md"
       >
         <Image
           src={path}

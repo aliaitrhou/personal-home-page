@@ -16,7 +16,7 @@ const Certificates = () => {
   const certToOpen = params.get("cert");
 
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 md:gap-10 items-stretch">
+    <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 md:gap-10 items-stretch px-2 sm:px-4 md:px-6 lg:px-10">
       <CertificateBox
         title="Design Officer"
         alt="design officer certeficate"
