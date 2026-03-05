@@ -18,7 +18,7 @@ const PageTitle: React.FC<Props> = ({ title, keyword }) => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.4, ease: "easeInOut", delay: 0.6 }}
         className="w-[88%] mx-auto">
-        <div className={`flex justify-center items-center gap-4 border border-neutral-200/70 dark:border-neutral-600/40 rounded-2xl py-2 w-full mx-auto bg-white dark:bg-neutral-700/60 ${lexend.className}`}>
+        <div className={`flex justify-center items-center gap-4 border border-neutral-200/70 dark:border-neutral-600/40 rounded-2xl py-2 w-full mx-auto bg-white dark:bg-neutral-700/60 ${lexend.className} mb-4 sm:mb-5 md:mb-6`}>
           <div className="uppercase text-center text-sm sm:text-md dark:text-white/70 text-zinc-800">
             {keyword}
           </div>

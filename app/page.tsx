@@ -1,4 +1,3 @@
-import React from "react";
 import ContentBox from "@/components/content-box";
 import EmailButton from "@/components/email-button";
 import MediaBox from "@/components/media-box";
@@ -17,7 +16,7 @@ import { saira } from "./fonts";
 
 const Home = () => {
   return (
-    <div className="w-full mx-auto space-y-6 sm:space-y-8">
+    <div className="w-full mx-auto space-y-6 sm:space-y-8 mt-4">
       <SectionWrapper delay={0}>
         <ContentBox title="About Me" icon={<FaStarOfLife className="text-orange-400 dark:text-NeonLime-500" />}>
           <p
