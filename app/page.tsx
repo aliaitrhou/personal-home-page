@@ -18,9 +18,14 @@ const Home = () => {
   return (
     <div className="w-full mx-auto space-y-6 sm:space-y-8 mt-4">
       <SectionWrapper delay={0}>
-        <ContentBox title="About Me" icon={<FaStarOfLife className="text-orange-400 dark:text-NeonLime-500" />}>
+        <ContentBox
+          title="About Me"
+          icon={
+            <FaStarOfLife className="text-orange-400 dark:text-NeonLime-500" />
+          }
+        >
           <p
-            className={`text-justify indent-8 font-light text-sm xs:text-lg text-zinc-700 dark:text-zinc-300 ${saira.className} font-light tracking-tight`}
+            className={`text-justify indent-8 font-light md:text-lg text-zinc-700 dark:text-zinc-300 ${saira.className} font-light tracking-tight`}
           >
             Hey! I&apos;m Ali. Not sure how to intro myself, but I&apos;m a CS
             student and aspiring software developer based in Morocco. Driven by
@@ -41,7 +46,12 @@ const Home = () => {
         </ContentBox>
       </SectionWrapper>
       <SectionWrapper delay={0.3}>
-        <ContentBox title="Changelog" icon={<LuGitPullRequest className="text-orange-400 dark:text-NeonLime-500 size-4" />}>
+        <ContentBox
+          title="Changelog"
+          icon={
+            <LuGitPullRequest className="text-orange-400 dark:text-NeonLime-500 size-4" />
+          }
+        >
           <TimeLineContainer
             imagePath={hightSchool}
             title="Bacaloria degree - Casablanca."
@@ -62,9 +72,14 @@ const Home = () => {
             timeSpan="September 2022 - Present"
           >
             <ul className="space-y-2">
-              <li>- Pursuing Licence (Bachelor) degree in software engineering.</li>
-              <li>- Relevant courses: Adv Operating Systems, Web technologies, Databases, Data structures, languages,
-                    Functional programming, soft skills.</li>
+              <li>
+                - Pursuing Licence (Bachelor) degree in software engineering.
+              </li>
+              <li>
+                - Relevant courses: Adv Operating Systems, Web technologies,
+                Databases, Data structures, languages, Functional programming,
+                soft skills.
+              </li>
             </ul>
           </TimeLineContainer>
           <TimeLineContainer
@@ -73,27 +88,50 @@ const Home = () => {
             timeSpan="October 2023 - July 2025"
           >
             <ul className="space-y-2">
-              <li>- Led the InfoMath Club design office and delivered computer science workshops and academic events.</li>
-              <li>- Simplified complex CS concepts to make them accessible to the university community.</li>
-              <li>- Collaborated with PhD, Master’s, and undergraduate students in a high-performing academic team.</li>
-              <li>- Led the Organizing Council, organizing conferences and guiding students through CS topics and career pathways.</li>
+              <li>
+                - Led the InfoMath Club design office and delivered computer
+                science workshops and academic events.
+              </li>
+              <li>
+                - Simplified complex CS concepts to make them accessible to the
+                university community.
+              </li>
+              <li>
+                - Collaborated with PhD, Master’s, and undergraduate students in
+                a high-performing academic team.
+              </li>
+              <li>
+                - Led the Organizing Council, organizing conferences and guiding
+                students through CS topics and career pathways.
+              </li>
             </ul>
           </TimeLineContainer>
           <TimeLineContainer
             imagePath={webmonk}
             title="WebMonk SARLAU - Full Stack Developer"
-            timeSpan="October 2025 - Fabuary 2026" 
+            timeSpan="October 2025 - Fabuary 2026"
             isLast={true}
           >
             <ul className="space-y-2">
-              <li>- Contributed to real-world web solutions at WebMonk for international clients.</li>
-              <li>- Integrated third-party services using APIs and webhooks for our event-driven workflows.</li>
+              <li>
+                - Contributed to real-world web solutions at WebMonk for
+                international clients.
+              </li>
+              <li>
+                - Integrated third-party services using APIs and webhooks for
+                our event-driven workflows.
+              </li>
             </ul>
           </TimeLineContainer>
         </ContentBox>
       </SectionWrapper>
       <SectionWrapper delay={0.6}>
-        <ContentBox title="Me Online" icon={<MdOutlineOnlinePrediction className="text-orange-400 dark:text-NeonLime-500 size-5"/>}>
+        <ContentBox
+          title="Me Online"
+          icon={
+            <MdOutlineOnlinePrediction className="text-orange-400 dark:text-NeonLime-500 size-5" />
+          }
+        >
           <p className={`${saira.className} mb-3`}>
             Feel free to contact me at{" "}
             <a
