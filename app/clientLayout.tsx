@@ -102,6 +102,11 @@ export default function ClientLayout({
       path: "/projects/youtube-transcriber",
     },
     {
+      title: "Markdown Note Book",
+      keyword: "Education",
+      path: "/projects/note-book",
+    },
+    {
       title: "Examination Platform",
       keyword: "Education",
       path: "/projects/exami",
