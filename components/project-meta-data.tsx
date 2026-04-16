@@ -51,11 +51,15 @@ const ProjectMetaData: React.FC<ProjectMetaDataProps> = ({
     <div
       className={`text-sm mb-2 ${styles ? "flex flex-row items-start gap-2" : "space-x-2"}`}
     >
-      <div className={`inline whitespace-nowrap break-keep text-blue-400 bg-blue-400/40 dark:text-white dark:bg-white/20 w-fit px-2 rounded-md ${lexend.className}`}>
+      <div
+        className={`inline whitespace-nowrap break-keep text-blue-400 bg-blue-400/40 dark:text-white dark:bg-white/20 w-fit px-2 rounded-md ${lexend.className}`}
+      >
         <span>{title}</span>
       </div>
       <IoIosArrowRoundForward className="inline size-4 md:size-5 text-blue-400 dark:text-white" />
-      <p className={`inline font-light mt-2 ${styles} ${saira.className}`}>{children}</p>
+      <div className={`inline font-light mt-2 ${styles} ${saira.className}`}>
+        {children}
+      </div>
     </div>
   );
 };
