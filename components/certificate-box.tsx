@@ -5,7 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import { useSearchParams } from "next/navigation";
 import { createPortal } from "react-dom";
 import AnimationBox from "./animation-box";
-import { lexend, saira } from '@/app/fonts';
+import { crimson, lexend, saira } from "@/app/fonts";
 
 interface CertificateProps {
   title: string;
@@ -47,28 +47,88 @@ const CertificateBox: React.FC<CertificateProps> = ({
     <>
       <AnimationBox
         delay={delay}
-        className="relative w-full overflow-hidden space-y-2 border border-neutral-200 dark:border-neutral-600/50 rounded-t-lg rounded-b-xl bg-white dark:bg-neutral-700/60 backdrop-blur-md"
+        className="
+    group
+    flex
+    flex-col
+    md:flex-row
+    gap-4
+    w-full
+    border
+    border-neutral-200
+    dark:border-neutral-700
+    bg-white/60
+    dark:bg-zinc-800
+    backdrop-blur-xl
+    p-2
+    transition-all
+    duration-300
+    hover:border-orange-600/40
+    dark:hover:border-NeonLime-600/40
+    hover:-translate-y-0.5
+  "
       >
-        <Image
-          src={path}
-          alt={alt}
-          className={`object-fill rounded-t-lg w-full aspect-[14/8] sm:cursor-pointer  ${openCert ? "border-2 border-orange-400 dark:border-NeonLime-600" : "hover:scale-[2px]"}`}
+        {/* Image */}
+        <button
           onClick={() => {
             setExpand(true);
             removeQueryParams();
           }}
-        />
-        <div className="text-center px-3 pb-3 space-y-3">
-          <div className={`flex items-center justify-between  ${lexend.className}`}>
-            <h3 className="text-md sm:text-lg text-zinc-600  dark:text-zinc-300 font-semiBold">
+          className="
+      relative
+      overflow-hidden
+      rounded-sm
+      shrink-0
+      md:w-[230px]
+      w-full
+      aspect-[16/10]
+      border
+      border-neutral-300
+      dark:border-neutral-700
+      cursor-pointer
+    "
+        >
+          <Image
+            src={path}
+            alt={alt}
+            fill
+            className="
+        object-fill
+        transition-transform
+        duration-500
+        group-hover:scale-105
+      "
+          />
+        </button>
+
+        {/* Content */}
+        <div className="flex-1 pr-1">
+          <div
+            className={`flex items-center justify-between ${crimson.className}`}
+          >
+            <h3
+              className={`text-xl font-semibold text-neutral-900 dark:text-white `}
+            >
               {title}
             </h3>
-            <span className="rounded-sm bg-amber-300/60 text-zinc-500 dark:bg-zinc-400/30 dark:text-zinc-300 px-2 text-xs">
+
+            <span
+              className="
+          shrink-0
+          rounded-md
+          text-xs
+          font-medium
+          text-neutral-500
+          dark:text-neutral-300
+        "
+            >
               {date}
             </span>
           </div>
 
-          <p className={`text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 ${saira.className} text-justify`}>
+          <p
+            className={`block mt-4 text-[15px] leading-7 text-neutral-600 dark:text-neutral-400 ${saira.className}`}
+          >
             {children}
           </p>
         </div>
