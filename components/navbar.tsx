@@ -1,101 +1,128 @@
 "use client";
 
 import React from "react";
-import Logo from "./logo";
-import LinkBox from "./linkbox";
-import ToggleTheme from "./toggle-theme";
-import MobileMenu from "./mobileMenu";
-import { IoIosArrowRoundForward } from "react-icons/io";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { saira } from "@/app/fonts";
+import { FiFolder, FiAward, FiMail, FiUser } from "react-icons/fi";
 
-interface NavProps {
-  url: string;
+interface NavCardItem {
+  href: string;
+  label: string;
+  hint: string;
+  icon: React.ReactNode;
+  external?: boolean;
+}
+
+const cards: NavCardItem[] = [
+  {
+    href: "/",
+    label: "Home",
+    hint: "About",
+    icon: <FiUser />,
+  },
+  {
+    href: "/projects",
+    label: "Projects",
+    hint: "See what I've built",
+    icon: <FiFolder />,
+  },
+  {
+    href: "/certificates",
+    label: "Certificates",
+    hint: "Verified skills",
+    icon: <FiAward />,
+  },
+  {
+    href: "/contact",
+    label: "Contact",
+    hint: "Say hello",
+    icon: <FiMail />,
+  },
+  // {
+  //   href: "https://github.com/aliaitrhou/personal_home_page",
+  //   label: "Source",
+  //   hint: "Peek the code",
+  //   icon: <FaGithub />,
+  //   external: true,
+  // },
+];
+
+interface NavCardsProps {
   classNames?: string;
 }
 
-const Navbar: React.FC<NavProps> = ({ url, classNames }) => {
+const NavCards: React.FC<NavCardsProps> = ({ classNames }) => {
   const pathname = usePathname();
-
-  const projectSlug = pathname.startsWith("/projects/")
-    ? pathname.split("/")[2]
-    : null;
-  const isActiveProjectDetail = /^\/projects\/[^/]+$/.test(pathname);
-
-  const showDetailPageSlug = projectSlug && isActiveProjectDetail;
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 w-full bg-[#ffffff40] dark:bg-[#20202380] backdrop-blur-sm ${classNames} ${saira.className}`}
+      className={`w-full max-w-xl mx-auto ${saira.className} ${classNames ?? ""} bg-white dark:bg-black`}
     >
-      <div className="relative flex max-w-2xl flex-wrap mx-auto justify-between px-2 md:px-9">
-        <div className="flex items-center mr-5">
-            <Logo />
-        </div>
-        <ul className="hidden flex-grow sm:flex flex-col sm:flex-row w-full sm:w-auto items-center mt-4 sm:mt-0">
-          <LinkBox
-            url={url}
-            href="/projects"
-            classNames={showDetailPageSlug ? "py-2 pr-[2px]" : " "}
-          >
-            Projects
-          </LinkBox>
-          <AnimatePresence mode="wait">
-            {showDetailPageSlug && (
-              <motion.div
-                className="flex items-center"
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                variants={{
-                  visible: { transition: { staggerChildren: 0.1 } }, // slight delay between icon & slug
-                }}
-                key={projectSlug}
-              >
-                <motion.div
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -10 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <IoIosArrowRoundForward />
-                </motion.div>
+      <div className="grid grid-cols-2 sm:grid-cols-4 border border border-solid border-neutral-300 dark:border-neutral-700">
+        {cards.map((card, i) => {
+          const isActive = pathname === card.href;
+          const dividerClasses = [
+            i % 2 === 1 ? "border-l" : "",
+            i >= 2 ? "border-t sm:border-t-0" : "",
+            i > 0 ? "sm:border-l" : "",
+          ]
+            .filter(Boolean)
+            .join(" ");
 
-                <motion.div
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -10 }}
-                  transition={{ duration: 0.3, delay: 0.2 }} // delay slug after icon
-                  className="whitespace-nowrap break-keep ml-1 py-2 text-xs mr-1 font-light text-orange-500 dark:text-NeonLime-500"
+          const content = (
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.05, duration: 0.3 }}
+              className="group flex flex-col items-center justify-center gap-2 py-3 px-2 text-center transition-colors hover:bg-black/[0.03] dark:hover:bg-white/[0.04]"
+            >
+              <div className="flex items-center gap-2">
+                <span
+                  className={`text-xl transition-colors ${
+                    isActive
+                      ? "text-orange-500 dark:text-NeonLime-500"
+                      : "text-neutral-500 dark:text-neutral-400 group-hover:text-orange-500 dark:group-hover:text-NeonLime-500"
+                  }`}
                 >
-                  {decodeURIComponent(projectSlug)}
-                </motion.div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-          <LinkBox url={url} href="/certificates">
-            Certificates
-          </LinkBox>
-          <LinkBox url={url} href="/contact">
-            Contact
-          </LinkBox>
-          <LinkBox
-            url={"github"}
-            href="https://github.com/aliaitrhou/personal_home_page"
-          >
-            Source
-          </LinkBox>
-        </ul>
-        <div className="flex-1 text-end self-center">
-          <ToggleTheme />
-          <div className="ml-2 inline-block sm:hidden">
-            <MobileMenu path={url} />
-          </div>
-        </div>
+                  {card.icon}
+                </span>
+                <span className="text-sm font-medium text-neutral-800 dark:text-neutral-100">
+                  {card.label}
+                </span>
+              </div>
+              {/* <span className="text-xs font-light text-neutral-400 dark:text-neutral-500"> */}
+              {/*   {card.hint} */}
+              {/* </span> */}
+            </motion.div>
+          );
+
+          return (
+            <div
+              key={card.href}
+              className={`border-solid border-neutral-300 dark:border-neutral-700 ${dividerClasses}`}
+            >
+              {card.external ? (
+                <a
+                  href={card.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block focus:outline-none"
+                >
+                  {content}
+                </a>
+              ) : (
+                <Link href={card.href} className="block focus:outline-none">
+                  {content}
+                </Link>
+              )}
+            </div>
+          );
+        })}
       </div>
     </nav>
   );
 };
 
-export default Navbar;
+export default NavCards;
