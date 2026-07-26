@@ -25,7 +25,6 @@ const ProjectBox: React.FC<Props> = ({
       <Link
         href={href}
         className="
-
             border border-neutral-100 dark:border-neutral-600 
     group-hover:border-orange-600/40
     dark:group-hover:border-NeonLime-600/40
@@ -57,7 +56,7 @@ const ProjectBox: React.FC<Props> = ({
           >
             {projectName}
           </h3>
-          <span className="shrink-0 px-2 py-0.5 text-[14px] font-medium dark:text-zinc-100 text-zinc-600 rounded-md font-mplus">
+          <span className="shrink-0 px-2 py-0.5 text-[14px] font-medium dark:text-zinc-100 text-zinc-600 rounded-md">
             {date}
           </span>
         </div>
@@ -68,13 +67,13 @@ const ProjectBox: React.FC<Props> = ({
           {children}
         </p>
 
-        <ToolBox
-          color="white"
-          icon={<FaGithub className="size-4" />}
-          isLast={true}
+        <Link
           href={`https://github.com/aliaitrhou/${projectName}`}
-          title="Source code"
-        />
+          className={`w-fit ${lexend.className} text-xs font-light flex items-center gap-1 pl-1`}
+        >
+          <FaGithub className="size-4" />
+          Source code
+        </Link>
       </div>
     </div>
   );
