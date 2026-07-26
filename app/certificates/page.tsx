@@ -19,16 +19,15 @@ const Certificates = () => {
   const certToOpen = params.get("cert");
 
   return (
-    <section className="py-3 sm:py-2 md:py-0 space-y-4 sm:space-y-6 md:space-y-8">
+    <section className="py-4 space-y-4 sm:space-y-6 md:space-y-8">
       <ContentBox
         title="Software Engineering"
-        styles="sm:py-4"
         icon={
           <FaLaptopCode className="text-orange-400 dark:text-NeonLime-500" />
         }
       >
         <AnimationBox delay={0.1}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 md:gap-6 items-stretch">
+          <div className="grid grid-cols-1 gap-2 sm:gap-4 md:gap-6 items-stretch">
             <CertificateBox
               title="AI Developer"
               alt="ai dev certeficate"
@@ -54,7 +53,7 @@ const Certificates = () => {
               title="Advanced React"
               alt="advanced react certeficate"
               path={advancedReact}
-              delay={0.5}
+              delay={0.4}
               date="2024"
             >
               React certification focused on making faster apps with performance
@@ -65,7 +64,7 @@ const Certificates = () => {
               title="ML Workshop"
               alt="ML workshop certeficate"
               path={ml}
-              delay={0.4}
+              delay={0.5}
               date="2023"
             >
               Completed a Machine Learning workshop on supervised learning and
@@ -77,18 +76,17 @@ const Certificates = () => {
 
       <ContentBox
         title="Teamwork & Mentorship"
-        styles="sm:py-4"
         icon={
           <TiGroup className="text-orange-400 dark:text-NeonLime-500 size-4" />
         }
       >
-        <AnimationBox delay={0.1}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 md:gap-6 items-stretch">
+        <AnimationBox delay={0.6}>
+          <div className="grid grid-cols-1 gap-2 sm:gap-4 md:gap-6 items-stretch">
             <CertificateBox
               title="Design Officer"
               alt="design officer certeficate"
               path={infomath}
-              delay={0.1}
+              delay={0.7}
               openCert={certToOpen === "infomath"}
               date="2024"
             >
@@ -100,7 +98,7 @@ const Certificates = () => {
               title="Mentorship"
               alt="certificate of participation"
               path={fs}
-              delay={0.6}
+              delay={0.8}
               date="2023"
             >
               Mentoring and assisting in student registration at the Faculty of
