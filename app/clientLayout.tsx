@@ -1,20 +1,16 @@
 "use client";
 
 import { useRef, useEffect, useContext } from "react";
-import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { usePathname, useSelectedLayoutSegment } from "next/navigation";
+import { useSelectedLayoutSegment } from "next/navigation";
 import { Suspense } from "react";
 import { ImSpinner9 } from "react-icons/im";
 import { AnimatePresence, motion } from "framer-motion";
 import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import PageWrapper from "@/components/page-wrapper";
-
-// While i was working on the pages transition animation
-// i found that the exit animation is not working as expected which was related to nextjs app router
-// after some time i found an article that helped me to solve this issue
-// you can find more about this here:
-// https://www.imcorfitz.com/posts/adding-framer-motion-page-transitions-to-next-js-app-router
+import ToggleTheme from "@/components/toggle-theme";
+import { saira } from "./fonts";
+import Logo from "@/components/logo";
 
 function usePreviousValue<T>(value: T): T | undefined {
   const prevValue = useRef<T | undefined>(undefined);
@@ -65,67 +61,20 @@ export default function ClientLayout({
   animate,
   exit,
 }: clientLayoutProps) {
-  const pathname = usePathname();
   const segment = useSelectedLayoutSegment();
 
-  const pagesStatus = [
-    {
-      title: "To My Office",
-      path: "/",
-    },
-    {
-      title: "To My Portfolio",
-      path: "/projects",
-    },
-    {
-      title: "To My Awards",
-      path: "/certificates",
-    },
-    {
-      title: "Connect with Me",
-      keyword: "feel free To",
-      path: "/contact",
-    },
-    {
-      title: "With Shell Agent",
-      keyword: "Learn Linux & Terminal",
-      path: "/projects/shell-agent",
-    },
-    {
-      title: "With Jarvis AI",
-      keyword: "personal assistent",
-      path: "/projects/jarvis-ai",
-    },
-    {
-      title: "Youtube Transcriber",
-      keyword: "video translation",
-      path: "/projects/youtube-transcriber",
-    },
-    {
-      title: "Markdown Note Book",
-      keyword: "Education",
-      path: "/projects/note-book",
-    },
-    {
-      title: "Examination Platform",
-      keyword: "Education",
-      path: "/projects/exami",
-    },
-  ];
-
-  const page = pagesStatus.find((s) => s.path === pathname);
-  const title = page ? page.title : "Page Not Found";
-  const keyword = page ? page?.keyword : "404";
-
   return (
-    <main>
-      <Navbar url={pathname} />
+    <main className={`${saira.className}`}>
+      <div className="flex-1 flex items-center justify-between pl-2 sm:pl-8 md:pl-10 pr-[18%]">
+        <Logo />
+        <ToggleTheme />
+      </div>
       <Suspense
         fallback={
           <ImSpinner9 className="animate-spin size-8 mx-auto my-[40dvh]" />
         }
       >
-        <PageWrapper classNames="" title={title} keyword={keyword}>
+        <PageWrapper>
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={segment}
