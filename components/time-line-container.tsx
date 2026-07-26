@@ -19,34 +19,33 @@ const TimeLineContainer: React.FC<Props> = ({
   isLast = false,
 }) => {
   return (
-    <div className="w-full">
-      {/* Header with logo and title */}
-      <div className={`flex items-start gap-4 ${lexend.className} font-light`}>
-        <div className="relative w-12 h-12 flex-shrink-0">
+    <div className="w-full border-r border-neutral-500/30">
+      <div className={`flex items-center gap-4 ${lexend.className} font-light`}>
+        <div className="relative w-10 h-10 flex-shrink-0">
           <Image
             src={imagePath}
-            className="rounded-full bg-white object-contain p-0.5"
+            className="opacity-[0.9] rounded-e-lg bg-white object-cover p-0.5 border border-neutral-400 dark:border-neutral-700"
             alt={title}
             fill
             sizes="64px"
           />
         </div>
-        <div className="flex-1 -space-y-0.5 pt-1">
+        <div className="flex-1 -space-y-1">
           <p className="text-sm text-neutral-600 dark:text-neutral-400">
             {timeSpan}
           </p>
-          <h3 className="font-semibold text-xl text-gray-900 dark:text-gray-200">
+          <h3 className="font-semibold text-md md:text-lg text-gray-900 dark:text-gray-200">
             {title}
           </h3>
         </div>
       </div>
 
       <div
-        className={`${!isLast && "pb-3"} border-l border-neutral-500/40 ml-6 my-2`}
+        className={`${!isLast && "pb-3"} border-l border-neutral-500/40 my-1`}
       >
-        <div className="pl-10 flex-1 pb-6">
+        <div className="pl-8 flex-1 pb-6 pr-2">
           <div
-            className={`${saira.className} font-light text-gray-700 dark:text-neutral-400`}
+            className={`${saira.className} font-light text-sm text-neutral-700 dark:text-neutral-400`}
           >
             {children}
           </div>

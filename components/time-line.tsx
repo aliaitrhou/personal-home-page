@@ -15,7 +15,7 @@ const TimeLine: React.FC<Props> = ({ timeRange, children }) => {
       }}
     >
       <span
-        className="text-sm sm:text-md md:text-lg dark:text-zinc-400"
+        className="text-sm md:text-lg dark:text-zinc-400"
         style={{
           fontWeight: "bold",
           marginRight: "1em",
