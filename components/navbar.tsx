@@ -58,7 +58,7 @@ const NavCards: React.FC<NavCardsProps> = ({ classNames }) => {
 
   return (
     <nav
-      className={`w-full max-w-xl mx-auto ${saira.className} ${classNames ?? ""} bg-white dark:bg-black`}
+      className={`w-full ${saira.className} ${classNames ?? ""} bg-white dark:bg-zinc-800`}
     >
       <div className="grid grid-cols-2 sm:grid-cols-4 border border border-solid border-neutral-300 dark:border-neutral-700">
         {cards.map((card, i) => {
