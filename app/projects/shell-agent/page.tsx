@@ -1,120 +1,49 @@
-import React from "react";
 import ContentBox from "@/components/content-box";
 import Link from "next/link";
-import ProjectMetaData, { ToolBox } from "@/components/project-meta-data";
 import AnimationBox from "@/components/animation-box";
 import Image from "next/image";
 import terminal from "@/public/imgs/projects/shell_agent/shell_agent_terminal.png";
 import overview from "@/public/imgs/projects/shell_agent/overview.png";
 import user_guide from "@/public/imgs/projects/shell_agent/user-guide.png";
-import { FaDocker, FaNodeJs } from "react-icons/fa";
-import { RiDatabase2Fill, RiNextjsFill } from "react-icons/ri";
-import { SiClerk, SiPrisma } from "react-icons/si";
-import { DiRedis } from "react-icons/di";
-import {saira } from '@/app/fonts'
+import { saira } from "@/app/fonts";
 
 const ShellAgent = () => {
   return (
-    <div className="space-y-6 md:space-y-8">
+    <div className="space-y-6 md:space-y-8 text-sm font-thin">
       <AnimationBox delay={0}>
-        <ContentBox title="Description" styles={`${saira.className} font-light leading-7`}>
+        <ContentBox
+          title="Description"
+          styles={`${saira.className} font-light leading-7`}
+        >
           <p className="text-justify indent-6">
-            I built this app during a time when I was struggling to remember terminal commands.
-            A friend once shared a simple .txt file full of command explanations which is helpful but static.
-            That got me thinking:
-            what if instead of reading a file, I could talk to it? That thought sparked the idea for this AI-powered assistant. 
+            I built this app during a time when I was struggling to remember
+            terminal commands. A friend once shared a simple .txt file full of
+            command explanations which is helpful but static. That got me
+            thinking: what if instead of reading a file, I could talk to it?
+            That thought sparked the idea for this AI-powered assistant.
           </p>
-          <Image alt="shell agent terminal"
-            className="my-2 rounded-lg border-4  border-zinc-700 dark:border-zinc-900"
-            src={terminal} />
+          <Image
+            alt="shell agent terminal"
+            className="my-4 rounded-lg border-4  border-zinc-700 dark:border-zinc-900"
+            src={terminal}
+          />
           <p className="text-justify">
             Over time, I expanded it so users can now learn and run terminal
             commands directly in the browser, and even interact with real course
             material from my university.
           </p>
-        </ContentBox>
-      </AnimationBox>
-      <AnimationBox delay={0.2}>
-        <ContentBox title="Project Info">
-          <ProjectMetaData title="Platform">Web Application.</ProjectMetaData>
-          <ProjectMetaData
-            title="Tech Stack"
-            styles="flex flex-wrap items-center gap-2 mt-1 sm:mt-0"
-          >
-            <ToolBox
-              color="green"
-              icon={<FaNodeJs className="size-3" />}
-              href="https://nodejs.org"
-              title="NodeJs,"
-            />
-            <ToolBox
-              color="blue"
-              icon={<RiNextjsFill className="size-3" />}
-              href="https://nextjs.org/"
-              title="NextJs,"
-            />
-            <ToolBox color="white" icon={<SiClerk />} href="https://clerk.com"
-            title="Clerk,"
-            />
-            <ToolBox
-              color="yellow"
-              icon={<SiPrisma className="size-3" />}
-              href="https://www.prisma.io/"
-              title="PrismaORM,"
-            />
-            <ToolBox
-              color="blue"
-              icon={<FaDocker className="size-4" />}
-              href="https://docker.com"
-              title="Docker,"
-            />
-            <ToolBox
-              color="red"
-              icon={<DiRedis className="size-4" />}
-              href="https://redis.io"
-              title="Redis,"
-            />
-            <ToolBox
-              color="orange"
-              icon={<RiDatabase2Fill className="size-3" />}
-              href="https://neon.tech"
-              title="NeonDB."
-            />
-          </ProjectMetaData>
-          <ProjectMetaData title="Hosting">
-            Deployed to internet using Digital Ocean.
-          </ProjectMetaData>
-          <ProjectMetaData title="Website">
-            <Link
-              href={"https://shellagent.dev/"}
-              target="_blank"
-              className="hover:underline underline-offset-1 text-yellow-500 dark:text-emerald-400"
-            >
-              https://shellagent.dev
-            </Link>
-          </ProjectMetaData>
-          <ProjectMetaData title="Source Code">
-            <Link
-              href={"https://github.com/aliaitrhou/shell-agent"}
-              target="_blank"
-              className="hover:underline underline-offset-1 text-yellow-500 dark:text-emerald-400"
-            >
-              https://github.com/aliaitrhou/shell-agent
-            </Link>
-          </ProjectMetaData>
           <Image
             alt="shell agent landing"
             src={overview}
-            className="my-8 rounded-md"
+            className="my-4 rounded-md"
           />
-          <p className="mb-2">User Guide :</p>
+          <p className="mb-1">User Guide :</p>
 
-          <Link href="https://shellagent.ai/user-guide" target="_blank"
-          >
+          <Link href="https://shellagent.ai/user-guide" target="_blank">
             <Image
               alt="shell agent workspace"
               src={user_guide}
-              className="mb-8 rounded-md"
+              className="mb-4 rounded-md"
             />
           </Link>
         </ContentBox>

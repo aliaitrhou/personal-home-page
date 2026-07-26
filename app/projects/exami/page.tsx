@@ -11,13 +11,16 @@ import { SiExpress } from "react-icons/si";
 import { RiJavascriptFill } from "react-icons/ri";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { BiLogoPostgresql } from "react-icons/bi";
-import { saira } from '@/app/fonts'
+import { saira } from "@/app/fonts";
 
 const Exami = () => {
   return (
     <div className="space-y-3">
       <AnimationBox delay={0}>
-        <ContentBox title="Description" styles={`${saira.className} font-light leading-7`}>
+        <ContentBox
+          title="Description"
+          styles={`${saira.className} font-light leading-7`}
+        >
           <p className="text-justify indent-6">
             Collaborated with two teammates to design, build, scale, and secure
             an online examination platform using only vanilla JavaScript, as
@@ -33,69 +36,15 @@ const Exami = () => {
             many exams as needed and share them directly with students to take
             online.
           </p>
-        </ContentBox>
-      </AnimationBox>
-      <AnimationBox delay={0.2}>
-        <ContentBox title="Project Info"
-       >
-          <ProjectMetaData title="Platform">Web.</ProjectMetaData>
-          <ProjectMetaData
-            title="Tech Stack"
-            styles="flex flex-wrap items-center gap-2 mt-1 sm:mt-0"
-          >
-            <ToolBox
-              color="yellow"
-              icon={<RiJavascriptFill className="size-4" />}
-              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-              title="javascript,"
-            />
-            <ToolBox
-              color="blue"
-              icon={<RiTailwindCssFill className="size-3" />}
-              href="https://tailwindcss.com/"
-              title="Tailwindcss"
-            />
-            <ToolBox
-              color="black"
-              icon={
-                <SiExpress className="size-4 border border-black rounded-md" />
-              }
-              href="https://expressjs.com/"
-              title="ExpressJS"
-            />
-            <ToolBox
-              color="blue"
-              icon={<BiLogoPostgresql className="size-4" />}
-              href="https://postgresql.org/"
-              title="Postgresql,"
-            />
-            <ToolBox
-              color="orange"
-              icon={<FaKey className="size-3" />}
-              href="https://jwt.io/"
-              title="JWT."
-            />
-          </ProjectMetaData>
-          <ProjectMetaData title="Deployment">Not Deployed.</ProjectMetaData>
-          <ProjectMetaData title="Website">Not-hosted for now.</ProjectMetaData>
-          <ProjectMetaData title="Source Code">
-            <Link
-              href={"https://github.com/aliaitrhou/youtube-transcriber"}
-              target="_blank"
-              className="hover:underline underline-offset-1 text-yellow-500 dark:text-emerald-400"
-            >
-              https://github.com/aliaitrhou/exami
-            </Link>
-          </ProjectMetaData>
           <Image
             alt="exami teacher dashboard"
             src={exami_teacher}
-            className="rounded-md my-4 shadow-2xl"
+            className="rounded-md my-4"
           />
           <Image
             alt="exami create exam"
             src={exami_create_exam}
-            className="rounded-md mb-6 shadow-2xl"
+            className="rounded-md mb-6"
           />
         </ContentBox>
       </AnimationBox>
