@@ -10,5 +10,541 @@ body {
 }
 
 .inputs {
-  @apply focus:outline-none border-2 border-zinc-300 dark:border-neutral-600  focus:border-orange-400 dark:focus:border-NeonLime-600 placeholder-gray-600/40 dark:placeholder-zinc-500 backdrop-blur-sm px-3 py-2 rounded-md bg-white dark:bg-neutral-700/50 dark:hover:bg-neutral-700/30;
+  @apply focus:outline-none border border-zinc-300 dark:border-neutral-700 focus:border-orange-400 dark:focus:border-NeonLime-600 placeholder-gray-600/40 dark:placeholder-zinc-500 backdrop-blur-sm px-3 py-2 bg-white dark:bg-neutral-700/20 dark:hover:bg-neutral-700/30;
+}
+
+:root {
+  --ease-swift: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-pop: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  --ease-flick: cubic-bezier(0.5, 0, 0.1, 1);
+}
+
+mark.download-highlight {
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  color: inherit;
+  /* text-shadow: */
+  /*   -12px 12px 9.8px #93c5fd59, */
+  /*   21px -18.1px 7.3px #fff, */
+  /*   -18.1px -27.3px 30px #fff; */
+  background-color: #0000;
+  background-image:
+    linear-gradient(
+      104deg,
+      #93c5fd00 0.9%,
+      #93c5fd 2.4%,
+      #93c5fd80 5.8%,
+      #93c5fd1a 93%,
+      #93c5fdb3 96%,
+      #93c5fd00 98%
+    ),
+    linear-gradient(183deg, #93c5fd00 0%, #93c5fd4d 7.9%, #93c5fd00 15%);
+  border-radius: 7.5px;
+  margin: 0;
+  padding: 0.05em 0.18em;
+}
+
+/* ── Halftone portrait (components/halftone-portrait.tsx) ─────────── */
+
+[data-halftone] {
+  display: block;
+  position: relative;
+  aspect-ratio: 1;
+  user-select: none;
+}
+
+.halftone-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--foreground);
+  opacity: 0;
+}
+
+@keyframes halftone-reveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+[data-halftone][data-ready] .halftone-canvas {
+  animation: halftone-reveal 400ms var(--ease-swift) both;
+}
+
+/* The homepage portrait keeps its halftone print at rest. A bounded
+   topographic field develops behind it only after deliberate attention. */
+[data-portrait-stage] {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  aspect-ratio: 1;
+}
+
+.portrait-hidden-stage-trigger {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: default;
+  touch-action: manipulation;
+  appearance: none;
+}
+
+.portrait-hidden-stage-trigger:focus-visible {
+  outline: 1px solid var(--foreground);
+  outline-offset: 4px;
+}
+
+.portrait-hidden-stage-field {
+  position: absolute;
+  z-index: 0;
+  inset: -28% -36% -28% -20%;
+  contain: layout paint;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transform: scale(0.94);
+  mask-image: radial-gradient(
+    ellipse at 45% 49%,
+    transparent 0 25%,
+    rgb(0 0 0 / 0.38) 36%,
+    black 48%,
+    rgb(0 0 0 / 0.82) 61%,
+    transparent 78%
+  );
+  transition:
+    opacity 320ms var(--ease-swift),
+    transform 320ms var(--ease-swift);
+}
+
+[data-portrait-stage][data-motion="false"] .portrait-hidden-stage-field,
+[data-portrait-stage][data-motion="false"] .portrait-hidden-stage-shader-shell {
+  transition: none;
+}
+
+[data-portrait-stage][data-active="true"] .portrait-hidden-stage-field {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-portrait-stage][data-motion="true"] .portrait-hidden-stage-field {
+  will-change: transform, opacity;
+}
+
+.portrait-hidden-stage-fallback,
+.portrait-hidden-stage-shader,
+.portrait-hidden-stage-shader-shell,
+.portrait-hidden-stage-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.portrait-hidden-stage-fallback {
+  overflow: visible;
+  color: var(--foreground);
+  opacity: 0.028;
+  transform: rotate(-5deg);
+}
+
+.portrait-hidden-stage-fallback path {
+  vector-effect: non-scaling-stroke;
+  stroke: currentColor;
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.portrait-hidden-stage-shader {
+  opacity: 0.1;
+}
+
+.portrait-hidden-stage-shader-shell {
+  opacity: 0;
+  transition: opacity 180ms var(--ease-swift);
+}
+
+.portrait-hidden-stage-shader-shell[data-ready="true"] {
+  opacity: 1;
+}
+
+.dark .portrait-hidden-stage-fallback {
+  opacity: 0.026;
+}
+
+.dark .portrait-hidden-stage-shader {
+  opacity: 0.09;
+}
+
+.halftone-canvas {
+  opacity: 1;
+}
+
+/* ── Homepage introduction: small marks, deliberate responses ───── */
+
+.home-introduction p {
+  color: var(--gray-10, var(--muted-foreground));
+  font-size: 0.875rem;
+  line-height: 1.72;
+}
+
+.home-intro-trigger {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.18em;
+  white-space: nowrap;
+  touch-action: manipulation;
+}
+
+.home-design-mark,
+.home-details-mark,
+.home-vim-mark {
+  display: inline-block;
+  align-self: center;
+  flex: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--foreground);
+  pointer-events: none;
+  user-select: none;
+  vertical-align: -0.25em;
+}
+
+.home-design-laptop,
+.home-design-sparkle > img {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.home-design-laptop > img {
+  transition: transform 150ms var(--ease-swift);
+}
+
+.home-detail-units {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.home-detail-words .home-detail-unit + .home-detail-unit {
+  margin-inline-start: 0.22em;
+}
+
+.home-detail-unit {
+  display: inline-block;
+  transform-origin: center bottom;
+}
+
+.home-detail-period {
+  display: inline-block;
+}
+
+.home-design-sparkle {
+  opacity: 0.72;
+}
+
+.home-intro-trigger.home-intro-tap .home-design-laptop {
+  animation: home-intro-laptop-tap 220ms var(--ease-swift);
+}
+
+.home-intro-trigger.home-intro-tap .home-design-sparkle-a {
+  animation: home-intro-twinkle 220ms var(--ease-swift);
+}
+
+.home-intro-trigger.home-intro-tap .home-design-sparkle-b {
+  animation: home-intro-twinkle 220ms 45ms var(--ease-swift);
+}
+
+.home-intro-trigger.home-intro-tap .home-design-sparkle-dot {
+  animation: home-intro-twinkle 180ms 90ms var(--ease-swift);
+}
+
+.home-intro-trigger.home-intro-tap .home-detail-unit {
+  animation: home-detail-hop 1s var(--ease-spring);
+}
+
+.home-intro-trigger.home-intro-tap .home-detail-unit:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.home-intro-trigger.home-intro-tap .home-detail-unit:nth-child(3) {
+  animation-delay: 160ms;
+}
+
+.home-compass-mark {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.home-problems-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.home-intro-trigger.home-intro-tap .home-compass-needle {
+  transform-origin: center;
+  animation: home-intro-compass 650ms var(--ease-spring);
+}
+
+.home-intro-trigger.home-intro-tap .home-compass-ring {
+  animation: home-intro-ring 650ms var(--ease-swift);
+}
+
+@keyframes home-intro-compass {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  35% {
+    transform: rotate(-35deg);
+  }
+
+  65% {
+    transform: rotate(12deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes home-intro-ring {
+  0% {
+    opacity: 0.45;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.45;
+  }
+}
+
+.home-vim-mark {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.home-key {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.home-cursor {
+  opacity: 0.85;
+}
+
+.home-intro-trigger.home-intro-tap .home-key-a {
+  animation: home-intro-key-press 160ms var(--ease-flick);
+}
+
+.home-intro-trigger.home-intro-tap .home-key-b {
+  animation: home-intro-key-press 160ms 50ms var(--ease-flick);
+}
+
+.home-intro-trigger.home-intro-tap .home-key-c {
+  animation: home-intro-key-press 160ms 100ms var(--ease-flick);
+}
+
+.home-intro-trigger.home-intro-tap .home-cursor {
+  animation: home-intro-cursor-blink 500ms steps(1) 2;
+}
+
+@keyframes home-intro-key-press {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(1.5px);
+  }
+}
+
+@keyframes home-intro-cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.home-typed-text {
+  display: inline-block;
+}
+
+.home-typed-word {
+  display: inline-block;
+}
+
+.home-typed-letter {
+  display: inline-block;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+
+.home-intro-trigger.home-intro-tap .home-typed-letter {
+  animation: home-intro-type-pop 220ms var(--ease-flick);
+}
+
+@keyframes home-intro-type-pop {
+  0% {
+    transform: translateY(2px) scale(0.85);
+  }
+
+  55% {
+    transform: translateY(-1px) scaleX(1.08) scaleY(0.92);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-intro-trigger:hover .home-design-label {
+    color: transparent;
+    background-image: linear-gradient(
+      100deg,
+      color-mix(in oklch, green 35%, #4aa8ff),
+      color-mix(in oklch, yellow 35%, #44c77a)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .home-intro-trigger:hover .home-detail-unit {
+    animation: home-detail-hop 1s var(--ease-spring);
+  }
+
+  .home-intro-trigger:hover .home-detail-unit:nth-child(2) {
+    animation-delay: 80ms;
+  }
+
+  .home-intro-trigger:hover .home-detail-unit:nth-child(3) {
+    animation-delay: 160ms;
+  }
+
+  .home-intro-trigger:hover .home-design-laptop {
+    transform: translateY(1.5px);
+  }
+
+  .home-intro-trigger:hover .home-design-sparkle-a {
+    animation: home-intro-twinkle 220ms var(--ease-swift);
+  }
+
+  .home-intro-trigger:hover .home-design-sparkle-b {
+    animation: home-intro-twinkle 220ms 45ms var(--ease-swift);
+  }
+
+  .home-intro-trigger:hover .home-design-sparkle-dot {
+    animation: home-intro-twinkle 180ms 90ms var(--ease-swift);
+  }
+
+  .home-intro-trigger:hover .home-key-a {
+    animation: home-intro-key-press 160ms var(--ease-flick);
+  }
+
+  .home-intro-trigger:hover .home-key-b {
+    animation: home-intro-key-press 160ms 50ms var(--ease-flick);
+  }
+
+  .home-intro-trigger:hover .home-key-c {
+    animation: home-intro-key-press 160ms 100ms var(--ease-flick);
+  }
+
+  .home-intro-trigger:hover .home-cursor {
+    animation: home-intro-cursor-blink 500ms steps(1) 2;
+  }
+
+  .home-intro-trigger:hover .home-typed-letter {
+    animation: home-intro-type-pop 220ms var(--ease-flick);
+  }
+}
+
+@keyframes home-detail-hop {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  28% {
+    transform: translateY(-5px) scale(1.03);
+    animation-timing-function: var(--ease-spring);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes home-intro-laptop-tap {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  45% {
+    transform: translateY(1.5px);
+  }
+}
+
+@keyframes home-intro-twinkle {
+  0%,
+  100% {
+    opacity: 0.72;
+    transform: scale(1);
+  }
+
+  45% {
+    opacity: 1;
+    transform: scale(1.22);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .external-label .external-mark {
+    transition: none;
+  }
+
+  a:hover .external-label .external-mark {
+    transform: none;
+  }
+
+  .home-design-laptop,
+  .home-design-sparkle,
+  .home-detail-unit,
+  .home-intro-trigger:is(:hover, :active) .home-design-laptop,
+  .home-intro-trigger:is(:hover, :active) .home-design-sparkle,
+  .home-intro-trigger:is(:hover, :active) .home-detail-unit,
+  .home-intro-trigger.home-intro-tap .home-design-laptop,
+  .home-intro-trigger.home-intro-tap .home-design-sparkle,
+  .home-intro-trigger.home-intro-tap .home-detail-unit {
+    animation: none;
+    transition: none;
+    transform: none;
+  }
 }
