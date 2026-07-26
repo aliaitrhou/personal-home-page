@@ -1,5 +1,5 @@
 import React from "react";
-import {lexend} from '@/app/fonts'
+import { crimson } from "@/app/fonts";
 
 interface Props {
   title: string;
@@ -14,8 +14,10 @@ const ContentBox: React.FC<Props> = ({
   icon,
 }) => {
   return (
-    <div className="px-2 sm:px-8 md:px-10">
-      <h2 className={`flex items-center gap-2 uppercase leading-4 text-xs xs:text-sm sm:text-md font-bold text-black dark:text-white w-fit ${lexend.className} mb-4`}>
+    <div className="">
+      <h2
+        className={`flex items-center gap-2 leading-4 text-sm sm:text-lg font-bold text-black dark:text-white w-fit ${crimson.className} mb-2`}
+      >
         {icon}
         <span>{title}</span>
       </h2>
