@@ -1,6 +1,6 @@
 import { TbAlertTriangle } from "react-icons/tb";
 import { FaRegCircleCheck } from "react-icons/fa6";
-import {lexend } from '@/app/fonts';
+import { lexend } from "@/app/fonts";
 
 type status = {
   message: string;
@@ -12,7 +12,7 @@ const FormAlert = ({ message, type }: status) => {
 
   return (
     <div
-      className={`w-full mx-auto backdrop-blur-sm rounded-xl p-2 px-4 sm:px-6 flex flex-row items-center gap-3 ${err ? "border-2 border-red-500 bg-red-400/30 text-red-500" : "border-2 border-green-500 bg-green-500/30 text-green-500 "} mt-2 text-xs xs:text-sm sm:text-md font-semiBold ${lexend.className}`}
+      className={`w-full mx-auto backdrop-blur-sm py-2  px-4 sm:px-6 flex flex-row items-center gap-3 ${err ? "border border-red-500 bg-red-400/30 text-red-500" : "border border-green-500 bg-green-500/30 text-green-500 "} mt-2 text-xs xs:text-sm sm:text-md font-semiBold ${lexend.className}`}
     >
       {err ? (
         <TbAlertTriangle className="size-5 sm:size-4" />

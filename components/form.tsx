@@ -11,7 +11,7 @@ import React, {
 import axios from "axios";
 import RequiredBox from "./required-warn-box";
 import { ImSpinner9 } from "react-icons/im";
-import { saira } from '@/app/fonts';
+import { saira } from "@/app/fonts";
 
 interface Props {
   getStatus: (message: string, error: boolean) => void;
@@ -136,7 +136,7 @@ const Form: React.FC<Props> = ({ getStatus }) => {
 
   return (
     <form
-      className={`max-w-md sm:max-w-lg flex flex-col gap-2 md:gap-3 w-full ${saira.className}`}
+      className={`flex flex-col gap-2 md:gap-3 w-full ${saira.className}`}
       noValidate
       onSubmit={(e) => handleSubmit(e)}
     >
@@ -177,7 +177,7 @@ const Form: React.FC<Props> = ({ getStatus }) => {
       />
       <button
         type="submit"
-        className="bg-orange-400/45 text-orange-500 hover:bg-orange-400/40 dark:bg-NeonLime-400/45 dark:text-NeonLime-500 dark:hover:bg-NeonLime-400/40 border-2 border-orange-400 dark:border-NeonLime-600 text-center w-24 sm:w-28 h-9 sm:h-10 text-sm sm:text-md font-bold  rounded-md sm:px-6  mx-auto focus:outline-none"
+        className="bg-orange-400/45 text-orange-500 hover:bg-orange-400/40 dark:bg-NeonLime-400/45 dark:text-NeonLime-500 dark:hover:bg-NeonLime-400/40 border border-orange-400 dark:border-NeonLime-600 text-center w-24 sm:w-28 h-9 sm:h-10 text-sm sm:text-md font-bold  rounded-sm sm:px-6 focus:outline-none mx-auto"
       >
         {status.isSubmitting ? (
           <ImSpinner9 className="animate-spin mx-auto" />
