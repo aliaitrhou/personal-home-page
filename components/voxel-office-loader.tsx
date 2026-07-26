@@ -16,14 +16,11 @@ interface OfficeContainerProps {
 export const OfficeContainer = forwardRef<HTMLDivElement, OfficeContainerProps>(
   ({ children }, ref) => {
     return (
-      <div
-        ref={ref}
-        className="voxel-dog m-auto w-[380px] h-[220px] relative"
-      >
+      <div ref={ref} className="voxel-dog self-end w-1/2 h-[140px] relative">
         {children}
       </div>
     );
-  }
+  },
 );
 
 OfficeContainer.displayName = "OfficeContainer";
