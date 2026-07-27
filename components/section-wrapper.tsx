@@ -13,7 +13,7 @@ const SectionWrapper: React.FC<Props> = ({ children, delay }) => {
     <motion.section
       initial={{ y: 10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, delay }}
+      transition={{ duration: 0.4, delay }}
     >
       {children}
     </motion.section>

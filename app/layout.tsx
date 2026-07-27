@@ -4,7 +4,7 @@ import ClientLayout from "./clientLayout";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "Ali Ait Rahou",
+  title: "Ali Ait rahou",
   description: "My personal home page",
 };
 
@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="selection:bg-orange-500/40 dark:selection:bg-NeonLime-600/45 dark:selection:text-black max-w-2xl font-Nunito mx-auto pt-14 bg-amber-50 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200">
+      <body className="selection:bg-orange-500/40 dark:selection:bg-NeonLime-600/45 dark:selection:text-black max-w-2xl font-Nunito mx-auto bg-white dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200">
         <ClientLayout
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
