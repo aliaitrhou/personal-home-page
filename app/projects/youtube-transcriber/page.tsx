@@ -1,14 +1,8 @@
-import React from "react";
 import ContentBox from "@/components/content-box";
-import Link from "next/link";
-import ProjectMetaData, { ToolBox } from "@/components/project-meta-data";
 import AnimationBox from "@/components/animation-box";
 import Image from "next/image";
 import yt_transcriber from "@/public/imgs/projects/yt_transcriber/yt_transcriber.png";
 import demo from "@/public/imgs/projects/yt_transcriber/demo.gif";
-import { FaNodeJs } from "react-icons/fa6";
-import { RiNextjsFill } from "react-icons/ri";
-import { SiChakraui, SiOpenai } from "react-icons/si";
 import { saira } from "@/app/fonts";
 
 const ShellAgent = () => {
