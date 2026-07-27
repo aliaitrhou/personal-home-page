@@ -84,7 +84,6 @@ export const projectsData: ProjectMeta[] = [
   {
     slug: "youtube-transcriber",
     name: "Youtube Transcriber",
-    status: "Active",
     year: "2024",
     platform: "Web Application",
     tools: [
