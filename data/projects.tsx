@@ -14,11 +14,11 @@ import {
   SiPrisma,
   SiExpress,
   SiChakraui,
-  SiOpenai,
   SiExpo,
   SiLangchain,
   SiHomebrew,
 } from "react-icons/si";
+import { BsRobot } from "react-icons/bs";
 import { DiRedis, DiSqllite } from "react-icons/di";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { FaKey } from "react-icons/fa";
@@ -75,7 +75,7 @@ export const projectsData: ProjectMeta[] = [
       { icon: <FaNodeJs6 className="size-3" />, title: "NodeJs" },
       { icon: <SiExpo className="size-3" />, title: "Expo" },
       { icon: <SiLangchain className="size-4" />, title: "Langchain" },
-      { icon: <SiOpenai className="size-3" />, title: "OpenAI-Node" },
+      { icon: <BsRobot className="size-3" />, title: "OpenAI-Node" },
       { icon: <RiSupabaseFill className="size-3" />, title: "Supabase" },
     ],
     hosting: "Not deployed to app stores.",
@@ -89,7 +89,7 @@ export const projectsData: ProjectMeta[] = [
     tools: [
       { icon: <FaNodeJs6 className="size-3" />, title: "NodeJs" },
       { icon: <RiNextjsFill className="size-3" />, title: "NextJs" },
-      { icon: <SiOpenai className="size-3" />, title: "OpenAI-Python" },
+      { icon: <BsRobot className="size-3" />, title: "OpenAI-Python" },
       { icon: <SiChakraui />, title: "ChakraUI" },
     ],
     hosting: "Deployed to internet using Render.",
