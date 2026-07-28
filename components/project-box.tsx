@@ -25,7 +25,7 @@ const ProjectBox: React.FC<Props> = ({
       <Link
         href={href}
         className="
-            border border-neutral-100 dark:border-neutral-600 
+            border border-neutral-200 dark:border-neutral-600 
     group-hover:border-orange-600/40
     dark:group-hover:border-NeonLime-600/40
     transition-border
