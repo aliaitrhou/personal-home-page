@@ -35,17 +35,6 @@ const SteadFastHaven = () => {
             src={homePage}
             className="rounded-md my-4 border border-neutral-500/20"
           />
-
-          <p className="text-justify">
-            I contributed to both the frontend and backend development, building
-            responsive interfaces with Tailwind CSS, developing REST APIs using
-            Express.js, managing application data with PostgreSQL, and
-            implementing secure authentication using JWT. Throughout the
-            project, we focused on delivering a clean, accessible, and
-            performant experience that makes it easy for visitors to explore the
-            organization&apos;s initiatives and connect with its mission.
-          </p>
-
           <p className="text-justify">
             Working closely as a team, we translated the organization&apos;s
             vision into a modern web application that is both informative and
